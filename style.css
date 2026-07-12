@@ -500,14 +500,19 @@ img { display: block; max-width: 100%; }
 
 .case li::marker { color: var(--accent-hot); }
 
-.case-callout {
-  display: inline-block;
-  margin-top: 8px;
-  padding: 4px 8px;
-  background: rgba(244, 196, 48, .13);
-  border-radius: 8px;
-  font-size: 14px;
+/* outcome highlight block */
+.case-highlight {
+  margin: 18px 0 16px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: rgba(244, 196, 48, .14);
+}
+
+.case-highlight p {
+  margin: 0;
+  font-size: 15px;
   font-weight: 500;
+  color: #292524;
 }
 
 .diagram {
