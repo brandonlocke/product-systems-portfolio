@@ -196,7 +196,8 @@ img { display: block; max-width: 100%; }
   gap: 12px;
   border-radius: 999px;
   font-size: 14px;
-  font-weight: 800;
+  font-weight: 600;       /* softened from 800 */
+  letter-spacing: 0.04em; /* less shouty */
   text-decoration: none;
   transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
 }
@@ -398,7 +399,7 @@ img { display: block; max-width: 100%; }
   margin: 0 0 22px;
   color: inherit;
   font-size: 15px;
-  opacity: .72;
+  opacity: .8; /* slightly stronger */
 }
 
 .project-link {
@@ -471,7 +472,7 @@ img { display: block; max-width: 100%; }
 
 .case p,
 .case ul {
-  max-width: 760px;
+  max-width: 700px;  /* slightly narrower for readability */
   color: #344054;
   font-size: 17px;
   line-height: 1.78;
@@ -585,6 +586,9 @@ a:focus-visible {
   .project-card { padding: 24px; border-radius: 20px; }
   .how-i-work li { grid-template-columns: 48px 1fr; }
   .case-meta { margin-bottom: 52px; }
+  .footer-statement {
+    font-size: clamp(38px, 10vw, 72px); /* lighter footer on small screens */
+  }
   .footer-bottom { flex-direction: column; }
 }
 
