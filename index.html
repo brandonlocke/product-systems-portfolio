@@ -1,259 +1,891 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Brandon Locke’s product portfolio: consumer journeys, lifecycle infrastructure, rewards, and feedback systems.">
-  <meta name="theme-color" content="#111827">
-  <title>Brandon Locke — Product Systems Portfolio</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
-  <div class="scroll-progress" aria-hidden="true"><span></span></div>
-  <nav class="site-nav" aria-label="Primary navigation">
-    <a class="nav-name" href="#top">BL<span>.</span></a>
-    <div class="nav-links">
-      <a href="#work">Work</a>
-      <a href="#principles">Approach</a>
-      <a href="https://www.linkedin.com/in/brandonclocke/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
-    </div>
-  </nav>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Brandon Locke’s product portfolio: consumer journeys, lifecycle infrastructure, rewards, and feedback systems."
+    />
+    <meta name="theme-color" content="#111827" />
+    <title>Brandon Locke — Product Systems Portfolio</title>
+    <link rel="stylesheet" href="portfolio-interactive.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="scroll-progress" aria-hidden="true"><span></span></div>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a class="nav-name" href="#top">BL<span>.</span></a>
+      <div class="nav-links">
+        <a href="#work">Work</a>
+        <a href="#principles">Approach</a>
+        <a
+          href="https://www.linkedin.com/in/brandonclocke/"
+          target="_blank"
+          rel="noreferrer"
+          >LinkedIn ↗</a
+        >
+      </div>
+    </nav>
 
-  <header class="hero" id="top">
-    <div class="hero-inner">
-      <div class="hero-main">
-        <p class="eyebrow">Brandon Locke · Product Manager</p>
-        <h1>Turning fragmented signals into <span>reliable consumer product systems.</span></h1>
-        <p class="hero-sub">
-          Product Manager focused on growth, lifecycle systems, and marketplace experiences, with a strength in making complex operational products understandable and reliable.
+    <header class="hero" id="top">
+      <div class="hero-inner">
+        <div class="hero-main">
+          <p class="eyebrow">Brandon Locke · Product Manager</p>
+          <h1>
+            Turning fragmented signals into
+            <span>reliable consumer product systems.</span>
+          </h1>
+          <p class="hero-sub">
+            Product Manager focused on growth, lifecycle systems, and
+            marketplace experiences, with a strength in making complex
+            operational products understandable and reliable.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#work"
+              >Explore the work <span>↓</span></a
+            >
+            <a class="button button-secondary" href="#case-lifecycle"
+              >See the systems thinking</a
+            >
+          </div>
+        </div>
+        <aside class="hero-side">
+          <div class="portrait-card">
+            <img
+              src="profile.jpg"
+              alt="Brandon Locke"
+              class="hero-photo"
+              width="720"
+              height="720"
+            />
+            <span class="portrait-note">Chicago · Building at the seams</span>
+          </div>
+          <p class="hero-principle">
+            I design lifecycle systems around what the customer has actually
+            done and is ready to do next—not what an ambiguous event or status
+            merely suggests. Respecting customer state means preserving
+            unfinished intent, avoiding premature assumptions, and making the
+            next appropriate action easier.
+          </p>
+        </aside>
+      </div>
+    </header>
+
+    <main>
+      <section class="section approach" id="principles">
+        <div class="container">
+          <p class="section-kicker">01 · Approach</p>
+          <h2>How I work on growth and lifecycle</h2>
+          <ul class="how-i-work">
+            <li>Start from friction and signals.</li>
+            <li>Define the future journey and states.</li>
+            <li>Turn that into build-ready requirements.</li>
+            <li>Coordinate cross-functional launches.</li>
+            <li>Stay close to production and iterate.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section work-index" id="work">
+        <div class="container">
+          <p class="section-kicker">02 · Selected systems</p>
+          <h2>CarAdvise systems and journeys</h2>
+          <div class="project-grid">
+            <article class="project-card" data-index="01">
+              <span class="status-chip">Released</span>
+              <h3>Rebuilding the booking journey</h3>
+              <p>
+                A more recoverable multi-step booking journey that recognizes
+                returning customers and preserves their progress.
+              </p>
+              <a href="#case-booking" class="project-link">Read case</a>
+            </article>
+
+            <article class="project-card" data-index="02">
+              <span class="status-chip">Launched</span>
+              <h3>Launching CarAdvise Rewards</h3>
+              <p>
+                A points-based rewards MVP with clear earn/burn rules and a
+                cross-surface launch that worked at meaningful volume.
+              </p>
+              <a href="#case-rewards" class="project-link">Read case</a>
+            </article>
+
+            <article class="project-card" data-index="03">
+              <span class="status-chip">Platform</span>
+              <h3>Lifecycle systems that respect customer state</h3>
+              <p>
+                Lifecycle infrastructure that distinguishes intent from
+                completion and supports recovery journeys.
+              </p>
+              <a href="#case-lifecycle" class="project-link">Read case</a>
+            </article>
+
+            <article class="project-card" data-index="04">
+              <span class="status-chip">Live + evolving</span>
+              <h3>Customer-feedback operating system</h3>
+              <p>
+                An operating model that turns feedback into reliable,
+                closed-loop action anchored to the real service moment.
+              </p>
+              <a href="#case-feedback" class="project-link">Read case</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Case 1 -->
+      <section id="case-booking" class="section case">
+        <div class="container">
+          <h2>Case Study 1 – Rebuilding the booking journey</h2>
+          <p class="case-sub">
+            A more recoverable journey that recognizes returning customers and
+            preserves their progress.
+          </p>
+          <div class="case-meta">
+            <span>Consumer journey</span><span>Released</span
+            ><span>Web + mobile</span>
+          </div>
+
+          <h3>Problem</h3>
+          <p>
+            The CarAdvise booking experience combined vehicle entry, service
+            selection, shop choice, scheduling, payment, and confirmation in a
+            multi-step journey. When confirmation failed late in the process,
+            customers could get stuck, repeat completed steps, or encounter
+            ambiguous payment behavior. Returning users were also asked to
+            provide information the platform already knew, making both
+            activation and repeat booking unnecessarily fragile.
+          </p>
+
+          <h3>What I did</h3>
+          <p>
+            I defined the customer and system behavior across first-time,
+            returning-user, and failure states. I translated that strategy into
+            implementation-ready requirements for state preservation, payment
+            and confirmation, conditional steps, saved customer data, service
+            discovery, mileage recommendations, location behavior, and
+            responsive experiences.
+          </p>
+
+          <h3>Key product decisions</h3>
+          <ul>
+            <li>
+              Separated payment-method handling from final booking confirmation
+              so a late-stage failure wouldn’t repeat payment actions or erase
+              valid progress.
+            </li>
+            <li>
+              Designed recovery around the point of failure, returning customers
+              to the relevant step while preserving their vehicle, shop,
+              services, and payment state.
+            </li>
+            <li>
+              Treated returning customers as known users: preselect saved data,
+              ask only for missing information, and remove redundant steps.
+            </li>
+          </ul>
+
+          <h3>Execution</h3>
+          <p>
+            I extended those principles across US and Canadian journeys,
+            partner-specific benefits, walk-in behavior, desktop, and responsive
+            mobile. During UAT, I consolidated copy, validation, navigation,
+            pricing, and interaction findings into a release-hardening package.
+          </p>
+
+          <h3>Outcome</h3>
+          <div class="case-highlight">
+            <p>
+              The new booking flow turned late-stage errors into recoverable
+              journeys that recognized returning customers and preserved their
+              progress.
+            </p>
+          </div>
+          <p>
+            The error-recovery, repeat-booking, and first-time-user hardening
+            work reached production, supported by related improvements to
+            dashboard entry, vehicle switching, service search, responsive
+            desktop behavior, and mileage recommendations. I’m intentionally
+            withholding conversion and MAU claims until the underlying booking
+            analytics and comparison periods are validated.
+          </p>
+        </div>
+      </section>
+
+      <!-- Case 2 -->
+      <section id="case-rewards" class="section case">
+        <div class="container">
+          <h2>Case Study 2 – Launching CarAdvise Rewards</h2>
+          <p class="case-sub">
+            A points-based rewards product with clear value and cross-platform
+            delivery.
+          </p>
+          <div class="case-meta">
+            <span>Retention</span><span>Launched May 2026</span
+            ><span>230 launch-bonus orders</span>
+          </div>
+
+          <h3>Problem</h3>
+          <p>
+            The previous miles-based rewards concept was difficult to understand
+            and weakly connected to the maintenance behaviors CarAdvise wanted
+            to encourage. We needed a points-based MVP that created recognizable
+            value, supported redemption, worked across customer and operational
+            surfaces, and remained understandable to both customers and support
+            teams.
+          </p>
+
+          <h3>What I did</h3>
+          <p>
+            I translated the retention goal into the program’s operating rules,
+            customer experience, lifecycle data, measurement plan, launch
+            readiness, and post-launch support model. I defined the audiences,
+            earn-and-burn behavior, rounding, reservation states, exclusions,
+            retroactive eligibility, success measures, and MVP boundaries.
+          </p>
+
+          <h3>Key product decisions</h3>
+          <ul>
+            <li>
+              Established a simple currency: 100 points equals 1.00 in service
+              credit, earned through eligible maintenance spend and selected
+              customer behaviors.
+            </li>
+            <li>
+              Defined milestone rewards for adding a vehicle, creating a first
+              booking, completing a first service, and updating mileage.
+            </li>
+            <li>
+              Specified how points should behave across reservation, redemption,
+              cancellation, discounts, partner benefits, tires, taxes, and fees.
+            </li>
+            <li>
+              Designed the connected experience across dashboard, checkout,
+              approval, receipts, web, mobile, admin tooling, and lifecycle
+              communications.
+            </li>
+            <li>
+              Created launch training and a 30-day support channel, then
+              converted live customer patterns and ledger anomalies into
+              guidance and prioritized fixes.
+            </li>
+          </ul>
+
+          <h3>Execution</h3>
+          <p>
+            I worked with engineering, CX, and support to turn the program rules
+            into concrete changes across web, mobile, checkout, admin tooling,
+            and Klaviyo data. I documented earn-and-burn behavior for frontline
+            teams, set up a dedicated 30-day launch-support channel, and used
+            early redemption and ledger patterns to prioritize fixes and
+            guidance for edge cases.
+          </p>
+
+          <h3>Outcome</h3>
+          <div class="case-highlight">
+            <p>
+              Within its first week, roughly 230 orders successfully received
+              the 500-point launch bonus, providing early evidence that the
+              eligibility and issuance logic was operating at meaningful volume.
+            </p>
+          </div>
+          <p>
+            I also established the support and triage model used to identify
+            redemption and ledger edge cases after launch. Retention,
+            redemption, visit-frequency, and AOV effects remain measurement
+            priorities rather than claimed outcomes.
+          </p>
+        </div>
+      </section>
+
+      <!-- Case 3 -->
+      <section id="case-lifecycle" class="section case">
+        <div class="container">
+          <h2>
+            Case Study 3 – Designing lifecycle systems that respect customer
+            state
+          </h2>
+          <p class="case-sub">
+            Lifecycle infrastructure built around real customer behavior and
+            intent, not ambiguous events.
+          </p>
+          <div class="case-meta">
+            <span>Lifecycle infrastructure</span><span>Mixed evidence</span
+            ><span>Klaviyo + product data</span>
+          </div>
+
+          <h3>Problem</h3>
+          <p>
+            This CarAdvise lifecycle initiative started with a simple
+            observation: too many programs were reacting to ambiguous events
+            instead of to what customers had actually done or were ready to do
+            next. Klaviyo had become a duplicated, noisy environment, and
+            critical distinctions—like walk-in intent versus completed service,
+            or declined work versus true churn—weren’t reliably captured. I
+            treated lifecycle messaging as a product-infrastructure problem,
+            rebuilding events and states so journeys could be designed around
+            real customer behavior and intent rather than system guesses.
+          </p>
+
+          <h3>How I thought about declined-service customers</h3>
+          <p>
+            I treated a declined-service customer as interested but unresolved,
+            not disengaged. They had already acknowledged a maintenance need and
+            received a recommendation, but something—price, timing, trust, or
+            competing priorities—kept them from acting in that moment. That
+            mindset changed the requirement from “send a reminder email” to
+            “build a recoverable product state.” The system needed to remember
+            what was declined, where it was recommended, what it originally
+            cost, which alternatives were available, and how to reopen the
+            booking journey with that context intact.
+          </p>
+
+          <h3>How I thought about walk-in requests</h3>
+          <p>
+            A walk-in request meant the customer had chosen a shop and expressed
+            an intention to visit, but they hadn’t necessarily arrived, received
+            service, or paid. That put them in a “preparation, not completion”
+            state. The system needed to treat this as intent rather than a
+            finished visit and wait for a verified post-service event before
+            triggering service recaps, updating maintenance history, running
+            declined-service recovery, issuing rewards, or sending feedback
+            surveys. This led to redesigning the state model so lifecycle
+            programs, NPS, and service-history features depended on true
+            Paid/Completed signals instead of premature intent events.
+          </p>
+
+          <section class="state-story" aria-labelledby="state-story-title">
+            <div class="state-story-heading">
+              <div>
+                <p class="state-story-kicker">Interactive system walkthrough</p>
+                <h3 id="state-story-title">Watch the state model evolve</h3>
+              </div>
+              <p class="state-story-instruction">
+                <span aria-hidden="true">Swipe →</span
+                ><span class="sr-only"
+                  >Swipe or use the controls to move through the model.</span
+                >
+              </p>
+            </div>
+
+            <div class="state-story-frame">
+              <div
+                class="state-track"
+                data-state-track
+                tabindex="0"
+                aria-label="Lifecycle model steps"
+              >
+                <article
+                  class="state-slide"
+                  data-state-slide
+                  aria-label="Step 1 of 5: The assumed journey"
+                >
+                  <div class="state-slide-topline">
+                    <span>01/</span>
+                    <p>The assumed journey</p>
+                  </div>
+                  <div class="state-slide-copy">
+                    <h4>The system looked like a simple funnel.</h4>
+                    <p>
+                      Request, appointment, completion, follow-up. Clean on
+                      paper—but it assumed every event meant exactly what its
+                      name suggested.
+                    </p>
+                  </div>
+                  <div
+                    class="flow-canvas flow-canvas-linear"
+                    role="img"
+                    aria-label="Request created, then appointment booked, then service completed and paid, then post-service follow-up"
+                  >
+                    <div class="state-node is-active">Request created</div>
+                    <span class="state-arrow" aria-hidden="true">→</span>
+                    <div class="state-node is-active">Appointment booked</div>
+                    <span class="state-arrow" aria-hidden="true">→</span>
+                    <div class="state-node is-active">
+                      Service completed &amp; paid
+                    </div>
+                    <span class="state-arrow" aria-hidden="true">→</span>
+                    <div class="state-node">Post-service follow-up</div>
+                  </div>
+                </article>
+
+                <article
+                  class="state-slide"
+                  data-state-slide
+                  aria-label="Step 2 of 5: Intent is not completion"
+                >
+                  <div class="state-slide-topline">
+                    <span>02/</span>
+                    <p>Correct the signal</p>
+                  </div>
+                  <div class="state-slide-copy">
+                    <h4>Intent is not completion.</h4>
+                    <p>
+                      A walk-in request means the customer chose a shop and
+                      intended to visit. It does not prove they arrived,
+                      received service, or paid.
+                    </p>
+                  </div>
+                  <div
+                    class="flow-canvas flow-canvas-focus"
+                    role="img"
+                    aria-label="Walk-in intent must be verified before service is treated as completed and paid"
+                  >
+                    <div class="state-node is-intent">Walk-in intent</div>
+                    <div class="state-gate">
+                      <span>Verified service event</span>
+                      <span class="state-arrow" aria-hidden="true">→</span>
+                    </div>
+                    <div class="state-node is-active">
+                      Service completed &amp; paid
+                    </div>
+                  </div>
+                  <p class="state-impact">
+                    <strong>Product implication:</strong> rewards, history, NPS,
+                    and service recaps wait for a true Paid/Completed signal.
+                  </p>
+                </article>
+
+                <article
+                  class="state-slide"
+                  data-state-slide
+                  aria-label="Step 3 of 5: Declined does not mean lost"
+                >
+                  <div class="state-slide-topline">
+                    <span>03/</span>
+                    <p>Preserve unresolved need</p>
+                  </div>
+                  <div class="state-slide-copy">
+                    <h4>Declined does not mean disengaged.</h4>
+                    <p>
+                      The customer acknowledged a maintenance need. Price,
+                      timing, trust, or competing priorities stopped the
+                      action—not necessarily the intent.
+                    </p>
+                  </div>
+                  <div
+                    class="flow-canvas flow-canvas-branch"
+                    role="img"
+                    aria-label="Request created and appointment booked can lead to declined service"
+                  >
+                    <div class="state-branch-source">
+                      <div class="state-node is-active">Request created</div>
+                      <div class="state-node is-active">Appointment booked</div>
+                    </div>
+                    <div class="state-branch-lines" aria-hidden="true">
+                      <span>↘</span><span>↗</span>
+                    </div>
+                    <div class="state-node is-warning">Declined service</div>
+                  </div>
+                  <p class="state-impact">
+                    <strong>Product implication:</strong> represent declined
+                    work as a recoverable state, not a generic reminder
+                    audience.
+                  </p>
+                </article>
+
+                <article
+                  class="state-slide"
+                  data-state-slide
+                  aria-label="Step 4 of 5: Recovery preserves context"
+                >
+                  <div class="state-slide-topline">
+                    <span>04/</span>
+                    <p>Design the recovery</p>
+                  </div>
+                  <div class="state-slide-copy">
+                    <h4>
+                      Recovery should remember what the customer already told
+                      us.
+                    </h4>
+                    <p>
+                      The next journey reopens with the original need intact
+                      instead of asking the customer to reconstruct it.
+                    </p>
+                  </div>
+                  <div
+                    class="recovery-system"
+                    role="img"
+                    aria-label="Declined service preserves service, shop, quote, and alternatives before returning to a prefilled request"
+                  >
+                    <div class="state-node is-warning">Declined service</div>
+                    <span class="state-arrow" aria-hidden="true">→</span>
+                    <div class="context-packet">
+                      <span>Service</span>
+                      <span>Shop</span>
+                      <span>Original quote</span>
+                      <span>Alternatives</span>
+                    </div>
+                    <span class="state-arrow" aria-hidden="true">→</span>
+                    <div class="state-node is-active">Prefilled request</div>
+                  </div>
+                  <p class="state-impact">
+                    <strong>Product implication:</strong> the lifecycle message
+                    becomes an entry point into a recoverable product state.
+                  </p>
+                </article>
+
+                <article
+                  class="state-slide state-slide-final"
+                  data-state-slide
+                  aria-label="Step 5 of 5: The optimized lifecycle system"
+                >
+                  <div class="state-slide-topline">
+                    <span>05/</span>
+                    <p>The optimized system</p>
+                  </div>
+                  <div class="state-slide-copy">
+                    <h4>
+                      Verified customer state determines what happens next.
+                    </h4>
+                    <p>
+                      The final model separates intent, completion, and
+                      unresolved need—creating safer foundations for recovery,
+                      rewards, feedback, and history.
+                    </p>
+                  </div>
+                  <div
+                    class="full-state-model"
+                    role="img"
+                    aria-label="Complete lifecycle state model"
+                  >
+                    <div class="full-state-main">
+                      <div class="state-node is-active">Request created</div>
+                      <span class="state-arrow" aria-hidden="true">→</span>
+                      <div class="state-node is-active">Appointment booked</div>
+                      <span class="state-arrow" aria-hidden="true">→</span>
+                      <div class="state-node is-active">
+                        Service completed &amp; paid
+                      </div>
+                      <span class="state-arrow" aria-hidden="true">→</span>
+                      <div class="state-node">Post-service follow-up</div>
+                    </div>
+                    <div class="full-state-branches">
+                      <div class="branch-card">
+                        <span>Intent path</span>
+                        <div>
+                          <div class="state-node is-intent">Walk-in intent</div>
+                          <span class="state-arrow" aria-hidden="true">→</span
+                          ><strong>Verify</strong>
+                        </div>
+                      </div>
+                      <div class="branch-card">
+                        <span>Recovery path</span>
+                        <div>
+                          <div class="state-node is-warning">
+                            Declined service
+                          </div>
+                          <span class="state-arrow" aria-hidden="true">↺</span
+                          ><strong>Preserve context</strong>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <div class="state-story-controls">
+                <button
+                  class="state-control"
+                  type="button"
+                  data-state-prev
+                  aria-label="Previous lifecycle step"
+                >
+                  ←
+                </button>
+                <div
+                  class="state-pagination"
+                  role="group"
+                  aria-label="Choose lifecycle step"
+                >
+                  <button
+                    type="button"
+                    data-state-dot
+                    aria-label="Go to step 1"
+                    aria-current="true"
+                  >
+                    01
+                  </button>
+                  <button
+                    type="button"
+                    data-state-dot
+                    aria-label="Go to step 2"
+                  >
+                    02
+                  </button>
+                  <button
+                    type="button"
+                    data-state-dot
+                    aria-label="Go to step 3"
+                  >
+                    03
+                  </button>
+                  <button
+                    type="button"
+                    data-state-dot
+                    aria-label="Go to step 4"
+                  >
+                    04
+                  </button>
+                  <button
+                    type="button"
+                    data-state-dot
+                    aria-label="Go to step 5"
+                  >
+                    05
+                  </button>
+                </div>
+                <p class="state-position" aria-live="polite">
+                  <span data-state-current>1</span> / 5
+                </p>
+                <button
+                  class="state-control"
+                  type="button"
+                  data-state-next
+                  aria-label="Next lifecycle step"
+                >
+                  →
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <h3>Systems work</h3>
+          <ul>
+            <li>
+              Documented an event/property environment with heavy duplication
+              (183 of 200 metrics in use and roughly 148 of 300 custom profile
+              properties).
+            </li>
+            <li>
+              Defined canonical events for vehicle addition, app entry, signup,
+              order completion, and Rewards activity.
+            </li>
+            <li>
+              Specified property consolidation for vehicle data, order IDs, user
+              type, maintenance dates, rewards, and mileage.
+            </li>
+            <li>
+              Defined a declined-service event and data contract that preserved
+              quote context, supported alternative shops, and reopened a
+              prefilled cart.
+            </li>
+            <li>
+              Corrected the walk_in state so it represented request intent
+              rather than completed or paid service, protecting lifecycle
+              reliability across communications, NPS, and history.
+            </li>
+          </ul>
+
+          <h3>Outcome</h3>
+          <div class="case-highlight">
+            <p>
+              The lifecycle platform now treats intent and completion as
+              distinct states, giving recovery and post-service programs a safer
+              foundation.
+            </p>
+          </div>
+          <p>
+            Evidence status is mixed: declined-services data reached production,
+            event/property consolidation is in development, and a reliable
+            walk-in completion event remains in backlog. The work is
+            intentionally presented as an evolving lifecycle platform rather
+            than a single campaign, creating a safer foundation for personalized
+            programs and measurable recovery journeys.
+          </p>
+        </div>
+      </section>
+
+      <!-- Case 4 -->
+      <section id="case-feedback" class="section case">
+        <div class="container">
+          <h2>Case Study 4 – Building a customer-feedback operating system</h2>
+          <p class="case-sub">
+            A documented, reliable feedback operating model with clear ownership
+            and QA.
+          </p>
+          <div class="case-meta">
+            <span>Voice of customer</span><span>Live foundation</span
+            ><span>Qualtrics + Zendesk</span>
+          </div>
+          <h3>Problem</h3>
+          <p>
+            Replacing Delighted with Qualtrics wasn’t simply a survey-platform
+            migration. CarAdvise needed reliable triggers, transaction context,
+            response routing, operational dashboards, suppression rules,
+            ownership, and closed-loop follow-up. Early testing also showed that
+            Zendesk ticket-update time was an unreliable proxy for the actual
+            service moment, creating a risk of mistimed surveys and misleading
+            data.
+          </p>
+
+          <h3>What I did</h3>
+          <p>
+            I designed and documented the operating model connecting Zendesk,
+            Qualtrics, XM Directory, transaction data, Slack alerts, QA
+            dashboards, and CX follow-up. I also translated production findings
+            into backend requirements for reliable Paid and completion
+            timestamps so feedback could be anchored to the customer’s actual
+            service experience.
+          </p>
+
+          <h3>Key decisions</h3>
+          <ul>
+            <li>
+              Defined the end-to-end flow from Zendesk qualification and survey
+              delivery through response classification, alert routing, dashboard
+              visibility, and follow-up.
+            </li>
+            <li>
+              Created an embedded-data model connecting feedback to the
+              customer, transaction, partner, environment, and source ticket.
+            </li>
+            <li>
+              Separated operational system-health monitoring from executive
+              reporting, with dedicated QA views for data completeness,
+              classification logic, alerts, and suppression.
+            </li>
+            <li>
+              Established ownership, closed-loop guidance, launch checks,
+              recurring QA, change control, and a staged maturity roadmap.
+            </li>
+            <li>
+              Used order-to-service analysis showing that roughly 47 percent of
+              orders were serviced three or more days after creation to support
+              a true Paid/completion-time anchor.
+            </li>
+          </ul>
+
+          <h3>Outcome</h3>
+          <div class="case-highlight">
+            <p>
+              CarAdvise now has a defined, owned feedback operating system that
+              can evolve toward more accurate survey timing and stronger
+              closed-loop recovery.
+            </p>
+          </div>
+          <p>
+            The Zendesk-to-Qualtrics NPS integration is live, supported by a
+            documented operating model for QA, routing, suppression, ownership,
+            and follow-up. The initial release uses an interim timing anchor,
+            while the true Paid/completion timestamp refinement is Ready for
+            Dev. The work established a trustworthy foundation for feedback
+            operations while creating a clear path toward more accurate survey
+            timing and closed-loop customer recovery.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <p class="section-kicker">The throughline</p>
+        <p class="footer-statement">
+          Respect the customer’s <em>actual state.</em>
         </p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="#work">Explore the work <span>↓</span></a>
-          <a class="button button-secondary" href="#case-lifecycle">See the systems thinking</a>
+        <div class="footer-bottom">
+          <p>
+            Product systems, lifecycle infrastructure, and consumer journeys.
+          </p>
+          <div>
+            <a href="#top">Back to top ↑</a>
+            <a
+              href="https://www.linkedin.com/in/brandonclocke/"
+              target="_blank"
+              rel="noreferrer"
+              >LinkedIn ↗</a
+            >
+          </div>
         </div>
       </div>
-      <aside class="hero-side">
-        <div class="portrait-card">
-          <img src="profile.jpg" alt="Brandon Locke" class="hero-photo" width="720" height="720">
-          <span class="portrait-note">Chicago · Building at the seams</span>
-        </div>
-        <p class="hero-principle">
-          I design lifecycle systems around what the customer has actually done and is ready to do next—not what an ambiguous event or status merely suggests. Respecting customer state means preserving unfinished intent, avoiding premature assumptions, and making the next appropriate action easier.
-        </p>
-      </aside>
-    </div>
-  </header>
+    </footer>
 
-  <main>
-    <section class="section approach" id="principles">
-      <div class="container">
-        <p class="section-kicker">01 · Approach</p>
-        <h2>How I work on growth and lifecycle</h2>
-        <ul class="how-i-work">
-          <li>Start from friction and signals.</li>
-          <li>Define the future journey and states.</li>
-          <li>Turn that into build-ready requirements.</li>
-          <li>Coordinate cross-functional launches.</li>
-          <li>Stay close to production and iterate.</li>
-        </ul>
-      </div>
-    </section>
+    <script>
+      const progress = document.querySelector(".scroll-progress span");
+      const updateProgress = () => {
+        const max = document.documentElement.scrollHeight - window.innerHeight;
+        progress.style.transform =
+          "scaleX(" + (max > 0 ? window.scrollY / max : 0) + ")";
+      };
+      updateProgress();
+      addEventListener("scroll", updateProgress, { passive: true });
+      addEventListener("resize", updateProgress);
 
-    <section class="section work-index" id="work">
-      <div class="container">
-        <p class="section-kicker">02 · Selected systems</p>
-        <h2>CarAdvise systems and journeys</h2>
-        <div class="project-grid">
-          <article class="project-card" data-index="01">
-            <span class="status-chip">Released</span>
-            <h3>Rebuilding the booking journey</h3>
-            <p>A more recoverable multi-step booking journey that recognizes returning customers and preserves their progress.</p>
-            <a href="#case-booking" class="project-link">Read case</a>
-          </article>
+      const stateTrack = document.querySelector("[data-state-track]");
+      if (stateTrack) {
+        const stateSlides = [
+          ...stateTrack.querySelectorAll("[data-state-slide]"),
+        ];
+        const stateDots = [...document.querySelectorAll("[data-state-dot]")];
+        const statePrev = document.querySelector("[data-state-prev]");
+        const stateNext = document.querySelector("[data-state-next]");
+        const stateCurrent = document.querySelector("[data-state-current]");
+        const reduceMotion = matchMedia(
+          "(prefers-reduced-motion: reduce)",
+        ).matches;
+        let activeState = 0;
 
-          <article class="project-card" data-index="02">
-            <span class="status-chip">Launched</span>
-            <h3>Launching CarAdvise Rewards</h3>
-            <p>A points-based rewards MVP with clear earn/burn rules and a cross-surface launch that worked at meaningful volume.</p>
-            <a href="#case-rewards" class="project-link">Read case</a>
-          </article>
+        const renderState = (index) => {
+          activeState = Math.max(0, Math.min(index, stateSlides.length - 1));
+          stateDots.forEach((dot, dotIndex) => {
+            if (dotIndex === activeState)
+              dot.setAttribute("aria-current", "true");
+            else dot.removeAttribute("aria-current");
+          });
+          stateCurrent.textContent = activeState + 1;
+          statePrev.disabled = activeState === 0;
+          stateNext.disabled = activeState === stateSlides.length - 1;
+        };
 
-          <article class="project-card" data-index="03">
-            <span class="status-chip">Platform</span>
-            <h3>Lifecycle systems that respect customer state</h3>
-            <p>Lifecycle infrastructure that distinguishes intent from completion and supports recovery journeys.</p>
-            <a href="#case-lifecycle" class="project-link">Read case</a>
-          </article>
+        const goToState = (index) => {
+          const nextIndex = Math.max(
+            0,
+            Math.min(index, stateSlides.length - 1),
+          );
+          stateSlides[nextIndex].scrollIntoView({
+            behavior: reduceMotion ? "auto" : "smooth",
+            block: "nearest",
+            inline: "center",
+          });
+          renderState(nextIndex);
+        };
 
-          <article class="project-card" data-index="04">
-            <span class="status-chip">Live + evolving</span>
-            <h3>Customer-feedback operating system</h3>
-            <p>An operating model that turns feedback into reliable, closed-loop action anchored to the real service moment.</p>
-            <a href="#case-feedback" class="project-link">Read case</a>
-          </article>
-        </div>
-      </div>
-    </section>
+        statePrev.addEventListener("click", () => goToState(activeState - 1));
+        stateNext.addEventListener("click", () => goToState(activeState + 1));
+        stateDots.forEach((dot, index) =>
+          dot.addEventListener("click", () => goToState(index)),
+        );
+        stateTrack.addEventListener("keydown", (event) => {
+          if (event.key === "ArrowRight") {
+            event.preventDefault();
+            goToState(activeState + 1);
+          }
+          if (event.key === "ArrowLeft") {
+            event.preventDefault();
+            goToState(activeState - 1);
+          }
+        });
 
-    <!-- Case 1 -->
-    <section id="case-booking" class="section case">
-      <div class="container">
-        <h2>Case Study 1 – Rebuilding the booking journey</h2>
-        <p class="case-sub">A more recoverable journey that recognizes returning customers and preserves their progress.</p>
-        <div class="case-meta"><span>Consumer journey</span><span>Released</span><span>Web + mobile</span></div>
+        const stateObserver = new IntersectionObserver(
+          (entries) => {
+            const visible = entries
+              .filter((entry) => entry.isIntersecting)
+              .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+            if (visible) renderState(stateSlides.indexOf(visible.target));
+          },
+          { root: stateTrack, threshold: [0.55, 0.75] },
+        );
 
-        <h3>Problem</h3>
-        <p>The CarAdvise booking experience combined vehicle entry, service selection, shop choice, scheduling, payment, and confirmation in a multi-step journey. When confirmation failed late in the process, customers could get stuck, repeat completed steps, or encounter ambiguous payment behavior. Returning users were also asked to provide information the platform already knew, making both activation and repeat booking unnecessarily fragile.</p>
-
-        <h3>What I did</h3>
-        <p>I defined the customer and system behavior across first-time, returning-user, and failure states. I translated that strategy into implementation-ready requirements for state preservation, payment and confirmation, conditional steps, saved customer data, service discovery, mileage recommendations, location behavior, and responsive experiences.</p>
-
-        <h3>Key product decisions</h3>
-        <ul>
-          <li>Separated payment-method handling from final booking confirmation so a late-stage failure wouldn’t repeat payment actions or erase valid progress.</li>
-          <li>Designed recovery around the point of failure, returning customers to the relevant step while preserving their vehicle, shop, services, and payment state.</li>
-          <li>Treated returning customers as known users: preselect saved data, ask only for missing information, and remove redundant steps.</li>
-        </ul>
-
-        <h3>Execution</h3>
-        <p>I extended those principles across US and Canadian journeys, partner-specific benefits, walk-in behavior, desktop, and responsive mobile. During UAT, I consolidated copy, validation, navigation, pricing, and interaction findings into a release-hardening package.</p>
-
-        <h3>Outcome</h3>
-<div class="case-highlight">
-  <p>The new booking flow turned late-stage errors into recoverable journeys that recognized returning customers and preserved their progress.</p>
-</div>
-<p>The error-recovery, repeat-booking, and first-time-user hardening work reached production, supported by related improvements to dashboard entry, vehicle switching, service search, responsive desktop behavior, and mileage recommendations. I’m intentionally withholding conversion and MAU claims until the underlying booking analytics and comparison periods are validated.</p>
-      </div>
-    </section>
-
-    <!-- Case 2 -->
-    <section id="case-rewards" class="section case">
-      <div class="container">
-        <h2>Case Study 2 – Launching CarAdvise Rewards</h2>
-        <p class="case-sub">A points-based rewards product with clear value and cross-platform delivery.</p>
-        <div class="case-meta"><span>Retention</span><span>Launched May 2026</span><span>230 launch-bonus orders</span></div>
-        
-        <h3>Problem</h3>
-        <p>The previous miles-based rewards concept was difficult to understand and weakly connected to the maintenance behaviors CarAdvise wanted to encourage. We needed a points-based MVP that created recognizable value, supported redemption, worked across customer and operational surfaces, and remained understandable to both customers and support teams.</p>
-
-        <h3>What I did</h3>
-        <p>I translated the retention goal into the program’s operating rules, customer experience, lifecycle data, measurement plan, launch readiness, and post-launch support model. I defined the audiences, earn-and-burn behavior, rounding, reservation states, exclusions, retroactive eligibility, success measures, and MVP boundaries.</p>
-
-        <h3>Key product decisions</h3>
-        <ul>
-          <li>Established a simple currency: 100 points equals 1.00 in service credit, earned through eligible maintenance spend and selected customer behaviors.</li>
-          <li>Defined milestone rewards for adding a vehicle, creating a first booking, completing a first service, and updating mileage.</li>
-          <li>Specified how points should behave across reservation, redemption, cancellation, discounts, partner benefits, tires, taxes, and fees.</li>
-          <li>Designed the connected experience across dashboard, checkout, approval, receipts, web, mobile, admin tooling, and lifecycle communications.</li>
-          <li>Created launch training and a 30-day support channel, then converted live customer patterns and ledger anomalies into guidance and prioritized fixes.</li>
-        </ul>
-
-        <h3>Execution</h3>
-<p>I worked with engineering, CX, and support to turn the program rules into concrete changes across web, mobile, checkout, admin tooling, and Klaviyo data. I documented earn-and-burn behavior for frontline teams, set up a dedicated 30-day launch-support channel, and used early redemption and ledger patterns to prioritize fixes and guidance for edge cases.</p>
-
-        <h3>Outcome</h3>
-<div class="case-highlight">
-  <p>Within its first week, roughly 230 orders successfully received the 500-point launch bonus, providing early evidence that the eligibility and issuance logic was operating at meaningful volume.</p>
-</div>
-
-<p>I also established the support and triage model used to identify redemption and ledger edge cases after launch. Retention, redemption, visit-frequency, and AOV effects remain measurement priorities rather than claimed outcomes.</p>
-      </div>
-    </section>
-
-    <!-- Case 3 -->
-    <section id="case-lifecycle" class="section case">
-      <div class="container">
-        <h2>Case Study 3 – Designing lifecycle systems that respect customer state</h2>
-        <p class="case-sub">Lifecycle infrastructure built around real customer behavior and intent, not ambiguous events.</p>
-        <div class="case-meta"><span>Lifecycle infrastructure</span><span>Mixed evidence</span><span>Klaviyo + product data</span></div>
-
-        <h3>Problem</h3>
-        <p>This CarAdvise lifecycle initiative started with a simple observation: too many programs were reacting to ambiguous events instead of to what customers had actually done or were ready to do next. Klaviyo had become a duplicated, noisy environment, and critical distinctions—like walk-in intent versus completed service, or declined work versus true churn—weren’t reliably captured. I treated lifecycle messaging as a product-infrastructure problem, rebuilding events and states so journeys could be designed around real customer behavior and intent rather than system guesses.</p>
-
-        <h3>How I thought about declined-service customers</h3>
-        <p>I treated a declined-service customer as interested but unresolved, not disengaged. They had already acknowledged a maintenance need and received a recommendation, but something—price, timing, trust, or competing priorities—kept them from acting in that moment. That mindset changed the requirement from “send a reminder email” to “build a recoverable product state.” The system needed to remember what was declined, where it was recommended, what it originally cost, which alternatives were available, and how to reopen the booking journey with that context intact.</p>
-
-        <h3>How I thought about walk-in requests</h3>
-        <p>A walk-in request meant the customer had chosen a shop and expressed an intention to visit, but they hadn’t necessarily arrived, received service, or paid. That put them in a “preparation, not completion” state. The system needed to treat this as intent rather than a finished visit and wait for a verified post-service event before triggering service recaps, updating maintenance history, running declined-service recovery, issuing rewards, or sending feedback surveys. This led to redesigning the state model so lifecycle programs, NPS, and service-history features depended on true Paid/Completed signals instead of premature intent events.</p>
-
-        <figure class="diagram">
-          <img src="lifecycle-diagram.png" alt="Lifecycle state model">
-          <figcaption>Canonical customer states used to anchor recovery, rewards, and follow-up to real service behavior, not just intent events.</figcaption>
-        </figure>
-
-        <h3>Systems work</h3>
-        <ul>
-          <li>Documented an event/property environment with heavy duplication (183 of 200 metrics in use and roughly 148 of 300 custom profile properties).</li>
-          <li>Defined canonical events for vehicle addition, app entry, signup, order completion, and Rewards activity.</li>
-          <li>Specified property consolidation for vehicle data, order IDs, user type, maintenance dates, rewards, and mileage.</li>
-          <li>Defined a declined-service event and data contract that preserved quote context, supported alternative shops, and reopened a prefilled cart.</li>
-          <li>Corrected the walk_in state so it represented request intent rather than completed or paid service, protecting lifecycle reliability across communications, NPS, and history.</li>
-        </ul>
-
-        <h3>Outcome</h3>
-<div class="case-highlight">
-  <p>The lifecycle platform now treats intent and completion as distinct states, giving recovery and post-service programs a safer foundation.</p>
-</div>
-<p>Evidence status is mixed: declined-services data reached production, event/property consolidation is in development, and a reliable walk-in completion event remains in backlog. The work is intentionally presented as an evolving lifecycle platform rather than a single campaign, creating a safer foundation for personalized programs and measurable recovery journeys.</p>
-      </div>
-    </section>
-
-    <!-- Case 4 -->
-    <section id="case-feedback" class="section case">
-      <div class="container">
-        <h2>Case Study 4 – Building a customer-feedback operating system</h2>
-        <p class="case-sub">A documented, reliable feedback operating model with clear ownership and QA.</p>
-        <div class="case-meta"><span>Voice of customer</span><span>Live foundation</span><span>Qualtrics + Zendesk</span></div>
-        <h3>Problem</h3>
-        <p>Replacing Delighted with Qualtrics wasn’t simply a survey-platform migration. CarAdvise needed reliable triggers, transaction context, response routing, operational dashboards, suppression rules, ownership, and closed-loop follow-up. Early testing also showed that Zendesk ticket-update time was an unreliable proxy for the actual service moment, creating a risk of mistimed surveys and misleading data.</p>
-
-        <h3>What I did</h3>
-        <p>I designed and documented the operating model connecting Zendesk, Qualtrics, XM Directory, transaction data, Slack alerts, QA dashboards, and CX follow-up. I also translated production findings into backend requirements for reliable Paid and completion timestamps so feedback could be anchored to the customer’s actual service experience.</p>
-
-        <h3>Key decisions</h3>
-        <ul>
-          <li>Defined the end-to-end flow from Zendesk qualification and survey delivery through response classification, alert routing, dashboard visibility, and follow-up.</li>
-          <li>Created an embedded-data model connecting feedback to the customer, transaction, partner, environment, and source ticket.</li>
-          <li>Separated operational system-health monitoring from executive reporting, with dedicated QA views for data completeness, classification logic, alerts, and suppression.</li>
-          <li>Established ownership, closed-loop guidance, launch checks, recurring QA, change control, and a staged maturity roadmap.</li>
-          <li>Used order-to-service analysis showing that roughly 47 percent of orders were serviced three or more days after creation to support a true Paid/completion-time anchor.</li>
-        </ul>
-
-       <h3>Outcome</h3>
-<div class="case-highlight">
-  <p>CarAdvise now has a defined, owned feedback operating system that can evolve toward more accurate survey timing and stronger closed-loop recovery.</p>
-</div>
-<p>The Zendesk-to-Qualtrics NPS integration is live, supported by a documented operating model for QA, routing, suppression, ownership, and follow-up. The initial release uses an interim timing anchor, while the true Paid/completion timestamp refinement is Ready for Dev. The work established a trustworthy foundation for feedback operations while creating a clear path toward more accurate survey timing and closed-loop customer recovery.</p>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <p class="section-kicker">The throughline</p>
-      <p class="footer-statement">Respect the customer’s <em>actual state.</em></p>
-      <div class="footer-bottom">
-        <p>Product systems, lifecycle infrastructure, and consumer journeys.</p>
-        <div>
-          <a href="#top">Back to top ↑</a>
-          <a href="https://www.linkedin.com/in/brandonclocke/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    const progress = document.querySelector('.scroll-progress span');
-    const updateProgress = () => {
-      const max = document.documentElement.scrollHeight - window.innerHeight;
-      progress.style.transform = 'scaleX(' + (max > 0 ? window.scrollY / max : 0) + ')';
-    };
-    updateProgress();
-    addEventListener('scroll', updateProgress, { passive: true });
-    addEventListener('resize', updateProgress);
-  </script>
-</body>
+        stateSlides.forEach((slide) => stateObserver.observe(slide));
+        renderState(0);
+      }
+    </script>
+  </body>
 </html>
