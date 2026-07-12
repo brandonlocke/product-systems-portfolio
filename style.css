@@ -111,7 +111,7 @@ img { display: block; max-width: 100%; }
   position: relative;
   overflow: hidden;
   min-height: 92vh;
-  padding: 150px 28px 110px;
+  padding: 96px 24px 64px;
   color: var(--white);
   background:
     radial-gradient(circle at 82% 18%, rgba(244, 196, 48, .23), transparent 26rem),
@@ -124,12 +124,11 @@ img { display: block; max-width: 100%; }
   position: absolute;
   inset: 0;
   pointer-events: none;
-  opacity: .15;
-  background-image:
-    linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px);
-  background-size: 70px 70px;
-  mask-image: linear-gradient(to bottom, black, transparent 85%);
+  background: radial-gradient(circle at top left, #e0f2fe 0, transparent 55%),
+              radial-gradient(circle at bottom right, #e5e7eb 0, transparent 60%);
+  opacity: 0.8;
+  z-index: -1;
+  background-attachment: fixed;
 }
 
 .hero-inner {
