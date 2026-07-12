@@ -200,9 +200,6 @@ a {
   width: var(--page);
   margin: 0 auto;
   display: grid;
-  grid-template-columns: minmax(0, 1.45fr) minmax(280px, 0.55fr);
-  align-items: center;
-  gap: clamp(48px, 8vw, 118px);
 }
 
 .eyebrow,
@@ -220,7 +217,7 @@ a {
 }
 
 .hero-main h1 {
-  max-width: 850px;
+  max-width: 980px;
   margin: 0;
   font-size: clamp(56px, 7.6vw, 112px);
   font-weight: 700;
@@ -295,42 +292,8 @@ a {
   background: var(--white);
 }
 
-.portrait-card {
-  position: relative;
-  padding: 12px;
-  background: var(--yellow);
-  border-radius: var(--radius-lg);
-  box-shadow: 18px 18px 0 rgba(255, 255, 255, 0.1);
-  transform: rotate(2.5deg);
-}
-
-.hero-photo {
-  width: 100%;
-  aspect-ratio: 1;
-  object-fit: cover;
-  object-position: 50% 35%;
-  border-radius: 20px;
-  filter: saturate(0.86) contrast(1.04);
-}
-
-.portrait-note {
-  position: absolute;
-  right: -14px;
-  bottom: 22px;
-  max-width: 190px;
-  padding: 9px 12px;
-  color: var(--white);
-  background: var(--ink);
-  border: 1px solid rgba(255, 255, 255, 0.24);
-  border-radius: 999px;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  transform: rotate(-4deg);
-}
-
 .hero-principle {
+  max-width: 720px;
   margin: 36px 0 0;
   padding-left: 20px;
   color: rgba(255, 255, 255, 0.72);
@@ -1207,23 +1170,6 @@ a:focus-visible {
 
   .hero-inner {
     grid-template-columns: 1fr;
-  }
-
-  .hero-side {
-    max-width: 470px;
-  }
-
-  .portrait-card {
-    transform: none;
-  }
-
-  .project-card,
-  .project-card:nth-child(n) {
-    grid-column: 1 / -1;
-  }
-
-  .project-card {
-    min-height: 310px;
   }
 
   .state-story-heading {
