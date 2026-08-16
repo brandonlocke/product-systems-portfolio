@@ -3,21 +3,20 @@
 import { useEffect, useState } from "react";
 
 const identities = [
-  "consumer product manager",
-  "lifecycle strategist",
-  "journey architect",
-  "systems thinker",
+  "lifecycle product manager",
+  "growth strategist",
+  "cross-functional translator",
+  "systems-minded operator",
 ];
 
 export default function TypedIdentity() {
   const [phraseIndex, setPhraseIndex] = useState(0);
-  const [characterIndex, setCharacterIndex] = useState(0);
+  const [characterIndex, setCharacterIndex] = useState(identities[0].length);
   const [deleting, setDeleting] = useState(false);
   const phrase = identities[phraseIndex];
 
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      setCharacterIndex(phrase.length);
       return;
     }
 
