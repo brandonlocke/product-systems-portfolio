@@ -1,7 +1,7 @@
 const bookingStages = ["Vehicle", "Service", "Shop", "Time", "Payment", "Confirm"];
 
-export default function CaseArtifact({ index }: { index: number }) {
-  if (index === 0) {
+export default function CaseArtifact({ slug }: { slug: string }) {
+  if (slug === "booking-journey") {
     return (
       <figure className="case-artifact artifact-booking" aria-label="Sanitized booking journey model showing six connected stages and a recovery rule">
         <figcaption><span>Journey model</span><strong>Context survives failure</strong></figcaption>
@@ -13,19 +13,27 @@ export default function CaseArtifact({ index }: { index: number }) {
     );
   }
 
-  if (index === 1) {
+  if (slug === "rewards") {
     return (
-      <figure className="case-artifact artifact-rewards" aria-label="Sanitized Rewards state model showing earning, available balance, reservation, and redemption">
-        <figcaption><span>Rewards ledger</span><strong>Value with explicit rules</strong></figcaption>
-        <div className="earn-list"><p>Earn</p><span>Add vehicle <b>+500</b></span><span>First request <b>+150</b></span><span>First Paid service <b>+500</b></span></div>
-        <div className="balance-card"><span>Available</span><strong>1,150 pts</strong><small>$11.50 service credit</small></div>
-        <div className="ledger-path"><span>Reserve</span><i>→</i><span>Redeem</span></div>
-        <p className="edge-rule"><b>Edge rule</b> Cancellation releases the reservation.</p>
+      <figure className="case-artifact artifact-rewards" aria-label="Sanitized Rewards evidence showing customers supported, ledger events, redeemed value, and redemption by engagement cohort">
+        <figcaption><span>Measured behavior · First 12 weeks</span><strong>Scale revealed the next loop</strong></figcaption>
+        <div className="rewards-metrics">
+          <article><strong>71.4K</strong><span>Customers</span></article>
+          <article><strong>100.7K</strong><span>Ledger events</span></article>
+          <article><strong>7.3K</strong><span>Redeemers</span></article>
+          <article><strong>$37.5K</strong><span>Value redeemed</span></article>
+        </div>
+        <div className="cohort-panel">
+          <div className="cohort-heading"><span>Redemption by observed behavior</span><small>Association, not causal lift</small></div>
+          <div className="cohort-row"><span>Earned beyond grant</span><i><b style={{ width: "100%" }} /></i><strong>32.6%</strong></div>
+          <div className="cohort-row"><span>Grant only</span><i><b style={{ width: "1.1%" }} /></i><strong>0.35%</strong></div>
+        </div>
+        <p className="rewards-learning"><b>Roadmap signal</b> Move from broad issuance toward repeat earning, visible value, and timely redemption prompts.</p>
       </figure>
     );
   }
 
-  if (index === 2) {
+  if (slug === "lifecycle-systems") {
     const states = [
       ["Walk-in submitted", "Intent", "Appointment support"],
       ["Order Paid", "Complete", "Rewards + NPS"],
