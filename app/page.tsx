@@ -1,21 +1,21 @@
 import Link from "next/link";
-import { cases } from "./work/cases";
+import { featuredCases } from "./work/cases";
 import CaseArtifact from "./components/CaseArtifact";
 import TypedIdentity from "./components/TypedIdentity";
 
 const strengths = [
-  ["01", "Journey architecture", "Map customer state across entry, recovery, and completion—then remove the work the system should remember."],
-  ["02", "Lifecycle infrastructure", "Turn noisy events and properties into a trustworthy model for personalized action."],
-  ["03", "Operating rules", "Define the awkward edges: eligibility, exclusions, ownership, support, and what happens when reality diverges."],
-  ["04", "Launch readiness", "Stay close through requirements, UAT, production behavior, and the evidence that shapes the next decision."],
+  ["01", "Product strategy", "Frame ambiguous customer and business problems, weigh competing paths, and translate the strongest answer into a roadmap."],
+  ["02", "Lifecycle growth", "Connect activation, retention, and recovery to the customer state the product can actually verify."],
+  ["03", "Cross-functional alignment", "Create agreement across product, design, engineering, lifecycle, operations, and CX when each sees a different part of the problem."],
+  ["04", "Launch ownership", "Stay close through requirements, UAT, production behavior, and the evidence that should reshape the next decision."],
 ];
 
 const process = [
-  ["Signal", "What is actually happening?"],
-  ["State", "What does the system know?"],
-  ["Decision", "What should happen next?"],
-  ["Operation", "Can teams build and run it?"],
-  ["Evidence", "What did production teach us?"],
+  ["Frame", "What is the customer and business cost?"],
+  ["Interrogate", "Which assumptions could change the answer?"],
+  ["Decide", "Which path creates the strongest leverage?"],
+  ["Align", "Can every discipline see its role?"],
+  ["Learn", "What should production change next?"],
 ];
 
 export default function Home() {
@@ -24,30 +24,30 @@ export default function Home() {
       <nav className="nav-shell" aria-label="Primary navigation">
         <Link className="wordmark" href="#top">Brandon<span>.</span></Link>
         <div className="nav-links"><Link href="#work">Work</Link><Link href="#strengths">Strengths</Link><Link href="#approach">Approach</Link></div>
-        <a className="nav-contact" href="https://www.linkedin.com/in/brandonclocke/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+        <a className="nav-contact" href="#contact">Connect ↓</a>
       </nav>
 
       <header className="hero" id="top">
         <div className="hero-copy reveal">
-          <div className="hero-kicker"><span className="status-dot" /> Available for the right senior product role <i>Chicago · CT</i></div>
+          <div className="hero-kicker"><span className="status-dot" /> Lifecycle product manager · Growth strategy</div>
           <TypedIdentity />
-          <h1>Turning fragmented signals into <em>reliable product systems.</em></h1>
+          <h1>Growth strategy for products that have to <em>work in the real world.</em></h1>
           <div className="hero-bottom">
-            <p>I work where customer behavior, operational reality, and technical constraints meet—and make the next action clearer.</p>
-            <a className="button button-dark" href="#work">Explore selected work <span>↓</span></a>
+            <p>I turn customer behavior and operational complexity into product roadmaps—and align teams around the decisions that reduce friction, protect revenue, and compound.</p>
+            <a className="button button-dark" href="#work">See the proof <span>↓</span></a>
           </div>
         </div>
         <aside className="current-card">
           <p className="eyebrow">Currently</p>
           <h2>Lifecycle Product Manager at CarAdvise</h2>
-          <p>Building onboarding, retention, marketplace, and customer-experience systems across product and lifecycle.</p>
-          <div className="current-tags"><span>0→1</span><span>Growth</span><span>Platform</span></div>
+          <p>Shaping onboarding, retention, marketplace, and customer-feedback strategy—and staying close enough to launch to learn from production.</p>
+          <div className="current-tags"><span>Strategy</span><span>Growth</span><span>Execution</span></div>
         </aside>
       </header>
 
       <section className="proof-strip" aria-label="Portfolio evidence at a glance">
         <div><strong>04</strong><span>connected product<br/>case studies</span></div>
-        <div><strong>230</strong><span>launch-bonus orders<br/>in Rewards week one</span></div>
+        <div><strong>71K+</strong><span>customers supported<br/>by Rewards</span></div>
         <div><strong>47%</strong><span>timing insight that<br/>reshaped feedback</span></div>
         <p>Evidence is labeled honestly: released, live, evolving, or still awaiting validated outcomes.</p>
       </section>
@@ -55,8 +55,8 @@ export default function Home() {
       <section className="strengths" id="strengths">
         <header className="section-intro">
           <p className="eyebrow">Where I’m strongest</p>
-          <h2>Strategic product thinking,<br/><em>built to operate.</em></h2>
-          <p>The craft is not the screen. It is the chain of decisions that makes a useful experience possible—and dependable.</p>
+          <h2>Strategy with enough range<br/><em>to survive reality.</em></h2>
+          <p>I lead from the bird’s-eye view, then go deep where evidence, edge cases, and execution threaten the outcome.</p>
         </header>
         <div className="strength-grid">
           {strengths.map(([number, title, copy]) => <article key={number}><span>{number}</span><h3>{title}</h3><p>{copy}</p></article>)}
@@ -65,12 +65,12 @@ export default function Home() {
 
       <section className="work" id="work">
         <div className="work-heading">
-          <p className="eyebrow">Selected work · 2025—2026</p>
-          <h2>Product stories with<br/><em>the decisions left in.</em></h2>
-          <p>Four case studies about reducing ambiguity across journeys, retention, infrastructure, and feedback.</p>
+          <p className="eyebrow">Selected work</p>
+          <h2>Four ways strategy<br/><em>became behavior.</em></h2>
+          <p>Each one-minute case isolates the problem, the decision, the organizational work, and the evidence that shaped what came next.</p>
         </div>
         <div className="project-list">
-          {cases.map((item, index) => (
+          {featuredCases.map((item, index) => (
             <Link className={`project-row project-${index + 1}`} href={`/work/${item.slug}`} key={item.slug}>
               <div className="project-copy">
                 <p className="project-label"><span>0{index + 1}</span>{item.category}<i>{item.status}</i></p>
@@ -78,23 +78,24 @@ export default function Home() {
                 <p>{item.deck}</p>
                 <div className="project-meta"><span><strong>{item.proofValue}</strong><small>{item.proofLabel}</small></span><b>Read the case <i>↗</i></b></div>
               </div>
-              <div className="project-artifact"><CaseArtifact index={index} /></div>
+              <div className="project-artifact"><CaseArtifact slug={item.slug} /></div>
             </Link>
           ))}
         </div>
       </section>
 
       <section className="approach" id="approach">
-        <div className="approach-copy"><p className="eyebrow">The throughline</p><h2>Respect the customer’s <em>actual state.</em></h2><p>Not what an ambiguous event suggests. Not what is convenient for the system to assume. Product behavior should begin with what the customer has actually done—and what they are ready to do next.</p></div>
+        <div className="approach-copy"><p className="eyebrow">The throughline</p><h2>Interrogate the problem.<br/><em>Align the path.</em></h2><p>The strongest roadmap is not the one with the cleanest slide. It is the one that accounts for how customers behave, how the business makes money, how the system works, and what teams can responsibly deliver.</p></div>
         <div className="process" aria-label="Product approach">
           {process.map(([title, copy], index) => <article key={title}><span>0{index + 1}</span><div><h3>{title}</h3><p>{copy}</p></div></article>)}
         </div>
       </section>
 
-      <footer className="footer">
-        <p className="eyebrow">Brandon Locke · Consumer Product Manager</p>
-        <h2>Make the complicated<br/><em>feel considered.</em></h2>
-        <div className="footer-row"><p>Chicago · 2026</p><div><a href="https://www.linkedin.com/in/brandonclocke/" target="_blank" rel="noreferrer">LinkedIn ↗</a><a href="#top">Back to top ↑</a></div></div>
+      <footer className="footer" id="contact">
+        <p className="eyebrow">Brandon Locke · Lifecycle + Growth Product</p>
+        <h2>Bring me the problem that resists the <em>obvious answer.</em></h2>
+        <a className="footer-cta" href="https://www.linkedin.com/in/brandonclocke/" target="_blank" rel="noreferrer">Connect on LinkedIn <span>↗</span></a>
+        <div className="footer-row"><a href="#top">Back to top ↑</a></div>
       </footer>
     </main>
   );
