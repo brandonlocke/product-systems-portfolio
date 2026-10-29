@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { featuredCases, supportingCases } from "./work/cases";
-import CaseVisual from "./components/CaseVisual";
+import ProductDemo from "./components/ProductDemo";
 
 export default function Home() {
   return (
@@ -38,9 +38,9 @@ export default function Home() {
                   <h3><Link className="project-link" href={`/work/${item.slug}`}>{item.shortTitle}<span className="project-arrow" aria-hidden="true">↗</span></Link></h3>
                   <p>{item.deck}</p>
                   <div className="project-proof"><strong>{item.proofValue}</strong><div><span>{item.proofLabel}</span><small>{item.proofContext}</small></div></div>
-                  <span className="read-case" aria-hidden="true">Read the case <span>→</span></span>
+                  <Link className="read-case" href={`/work/${item.slug}`}>Read the case <span aria-hidden="true">→</span></Link>
                 </div>
-                <div className="project-cover"><CaseVisual slug={item.slug} compact/><p className="cover-caption">Reconstructed product model</p></div>
+                <div className="project-cover"><ProductDemo slug={item.slug} compact/></div>
               </article>
             ))}
           </div>

@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import "@fontsource-variable/instrument-sans/standard.css";
-import "@fontsource-variable/newsreader/standard.css";
-import "@fontsource-variable/newsreader/standard-italic.css";
+import "@fontsource-variable/manrope";
 import "./globals.css";
+import "./product-demo.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://brandonlocke.co"),

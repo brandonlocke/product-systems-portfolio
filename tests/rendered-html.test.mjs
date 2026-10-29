@@ -23,7 +23,7 @@ for (const slug of ["rewards", "declined-services", "booking-journey", "lifecycl
     assert.match(html, /My contribution/);
     assert.match(html, /Evidence note/);
     const initialContent = html.split("<details")[0];
-    assert.match(initialContent, /<figure[^>]*aria-label="[^"]*Simplified product model/);
+    assert.match(initialContent, /<figure[^>]*aria-label="[^"]*Interactive product demonstration/);
     assert.match(initialContent, /Portfolio reconstruction/);
     assert.ok(html.includes(`https://brandonlocke.co/work/${slug}`));
     assert.match(html, /<details class="artifact-details">/);
