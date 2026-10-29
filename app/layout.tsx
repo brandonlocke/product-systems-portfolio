@@ -6,12 +6,12 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://brandonlocke.co"),
-  title: "Brandon Locke — Growth & Lifecycle Product",
-  description: "Product strategy for the moments where customer behavior, operational complexity, and growth collide.",
+  title: "Brandon Locke | Growth & Lifecycle Product Manager",
+  description: "Consumer product management across growth, lifecycle, and marketplace experiences. Selected work in Rewards, service recovery, and booking.",
   alternates: { canonical: "/" },
   openGraph: {
-    title: "Brandon Locke — Growth & Lifecycle Product",
-    description: "Product strategy for the moments where customer behavior, operational complexity, and growth collide.",
+    title: "Brandon Locke | Growth & Lifecycle Product Manager",
+    description: "Making complex consumer experiences feel simple. Explore the decisions, contributions, and evidence behind selected product work.",
     url: "https://brandonlocke.co",
     siteName: "Brandon Locke",
     type: "website",
@@ -26,8 +26,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Brandon Locke — Growth & Lifecycle Product",
-    description: "Product strategy for the moments where customer behavior, operational complexity, and growth collide.",
+    title: "Brandon Locke | Growth & Lifecycle Product Manager",
+    description: "Making complex consumer experiences feel simple. Explore selected work in Rewards, service recovery, and booking.",
     images: ["/social-preview.png"],
   },
   icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },

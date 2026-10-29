@@ -20,3 +20,11 @@ npm run build
 The repository is ready for Cloudflare Workers Builds. Use `npm run deploy` as the deploy command, with Node.js 22 or newer.
 
 The custom domain is `brandonlocke.co`.
+
+## Content and design
+
+The homepage features Rewards, Declined Services, and booking recovery. Lifecycle infrastructure and customer feedback remain available as supporting case studies. Case content lives in `app/work/cases.ts`.
+
+See [DESIGN.md](DESIGN.md) for the attention and clarity principles that guide content, hierarchy, accessibility, and evidence claims.
+
+After building, run the rendered-route checks with `node --test tests/rendered-html.test.mjs`.

@@ -4,164 +4,177 @@ export type CaseStudy = {
   title: string;
   category: string;
   status: string;
+  statusTone: "live" | "pilot" | "evolving";
+  period: string;
   deck: string;
   proofValue: string;
   proofLabel: string;
+  proofContext: string;
+  result: string;
+  evidenceLimit: string;
+  contribution: string;
+  collaborators: string;
   challengeHeading: string;
-  roleHeading: string;
-  frame: { label: string; value: string }[];
   challenge: string[];
-  role: string[];
-  decisions: { title: string; copy: string }[];
+  decisions: { title: string; constraint: string; choice: string }[];
   outcome: string;
   outcomeDetail: string;
-  next: string;
+  detailLabel: string;
 };
 
 export const cases: CaseStudy[] = [
   {
-    slug: "booking-journey",
-    shortTitle: "A booking journey that remembers",
-    title: "Rebuilding a fragile booking journey around recovery",
-    category: "Consumer journey",
-    status: "Released",
-    deck: "A multi-step experience that recognizes returning customers, preserves progress, and makes late-stage failure recoverable.",
-    proofValue: "6",
-    proofLabel: "connected booking stages",
-    challengeHeading: "Late-stage failure was erasing intent—and creating preventable commercial friction.",
-    roleHeading: "Reframe the journey around customer state, not a sequence of screens.",
-    frame: [
-      { label: "Scope", value: "Web + mobile" },
-      { label: "Role", value: "Product strategy, requirements, UAT" },
-      { label: "Partners", value: "Design, engineering, operations" },
-      { label: "Market", value: "US + Canada" },
-    ],
+    slug: "rewards",
+    shortTitle: "Give customers a reason to return.",
+    title: "Launching CarAdvise Rewards across the customer and operational experience",
+    category: "Retention & loyalty",
+    status: "Launched",
+    statusTone: "live",
+    period: "Launched May 2026",
+    deck: "Turning a points-based retention idea into a product customers could understand and teams could support.",
+    proofValue: "71,424",
+    proofLabel: "customers supported",
+    proofContext: "First 12 weeks after launch",
+    result: "Rewards launched across product, checkout, admin, and lifecycle communications. In its first 12 weeks, customers redeemed $37,520 in value.",
+    evidenceLimit: "These figures describe observed program activity. They do not establish an increase in retention caused by Rewards.",
+    contribution: "I defined the MVP rules, customer behavior, lifecycle requirements, and launch operating model, then used production findings to inform follow-up work.",
+    collaborators: "Engineering, design, CX, support, and lifecycle",
+    challengeHeading: "A retention idea needed rules people could rely on.",
     challenge: [
-      "CarAdvise’s booking experience combined vehicle entry, service selection, shop choice, scheduling, payment, and confirmation. When confirmation failed late in the journey, customers could lose context, repeat completed steps, or encounter ambiguous payment behavior.",
-      "Returning customers were also asked for information the platform already knew. The experience treated every visit like a blank slate—even when the customer, vehicle, and service intent were already clear.",
-    ],
-    role: [
-      "I defined customer and system behavior across first-time, returning-user, and failure states, then translated that model into implementation-ready requirements.",
-      "The work covered state preservation, payment and confirmation, conditional steps, saved customer data, service discovery, mileage recommendations, location behavior, and responsive experiences.",
+      "The previous miles-based concept was hard to understand and weakly connected to the behaviors CarAdvise wanted to encourage. A replacement needed recognizable value and a clear path from earning to redemption.",
+      "That value also had to survive the realities of checkout: changing services, cancellations, partner benefits, discounts, taxes, and fees. Every customer-facing promise needed matching operational behavior.",
     ],
     decisions: [
-      { title: "Separate payment from confirmation", copy: "A late-stage failure should not repeat a payment action or erase otherwise valid progress." },
-      { title: "Recover at the point of failure", copy: "Return the customer to the relevant step with their vehicle, shop, services, and payment state intact." },
-      { title: "Treat known customers as known", copy: "Preselect saved data, ask only for missing information, and remove redundant steps from repeat visits." },
-      { title: "Harden the whole journey", copy: "Extend the same logic across partner benefits, walk-ins, Canada, desktop, and responsive mobile." },
+      { title: "Make the value easy to recognize.", constraint: "Customers needed to understand what a balance was worth before deciding whether to use it.", choice: "I specified a simple currency: 100 points equals $1 in service credit, earned through eligible spend and selected maintenance behaviors." },
+      { title: "Define redemption before expanding earning.", constraint: "Points could be reserved, spent, or returned as an order changed. Ambiguity would undermine trust.", choice: "I defined reservation, cancellation, rounding, discount, and exclusion rules across product, checkout, admin, and communications." },
+      { title: "Treat the launch as the start of learning.", constraint: "An MVP could validate operations without proving a retention effect.", choice: "I created training and a 30-day support model, translated ledger and redemption issues into follow-up work, and used observed earning patterns to shape the next roadmap questions." },
     ],
-    outcome: "Failure became a recoverable state—not a dead end.",
-    outcomeDetail: "The redesigned flow reached production alongside improvements to dashboard entry, vehicle switching, service search, responsive behavior, and mileage recommendations. Conversion claims remain withheld until the comparison periods and underlying analytics are validated.",
-    next: "rewards",
+    outcome: "A live program, and a clearer next question.",
+    outcomeDetail: "The first 12 weeks produced 100,717 ledger transactions and approximately 7,450 order-linked redemption transactions. Customers who earned beyond the introductory grant redeemed at 32.6%, compared with 0.35% among grant-only recipients. That association focused the next questions on repeat earning, clearer redemption value, and timely engagement. It was not treated as causal evidence of retention lift.",
+    detailLabel: "Explore the program evidence",
   },
   {
-    slug: "rewards",
-    shortTitle: "Rewards with rules people can trust",
-    title: "Launching a points product across customer and operational surfaces",
-    category: "Retention",
-    status: "Launched May 2026",
-    deck: "A points-based MVP built for understandable value, operational scale, and the evidence needed to shape its next retention loop.",
-    proofValue: "71K+",
-    proofLabel: "customers supported in 12 weeks",
-    challengeHeading: "The retention idea needed to become a product customers and teams could actually trust.",
-    roleHeading: "Define the business rules, operating model, and launch path as one product.",
-    frame: [
-      { label: "Scope", value: "Cross-platform MVP" },
-      { label: "Role", value: "Rules, experience, measurement, launch" },
-      { label: "Partners", value: "Engineering, CX, support" },
-      { label: "Surfaces", value: "Product, checkout, admin, lifecycle" },
-    ],
+    slug: "declined-services",
+    shortTitle: "Reopen a service decision with context.",
+    title: "Building and launching a controlled declined-service recovery pilot",
+    category: "Lifecycle recovery",
+    status: "Manual pilot",
+    statusTone: "pilot",
+    period: "October 2026 pilot",
+    deck: "Helping customers revisit recommended maintenance with a clear explanation, relevant shop options, and a controlled incentive.",
+    proofValue: "169",
+    proofLabel: "recipients processed",
+    proofContext: "First manual send · October 26, 2026",
+    result: "The first manual send processed 169 recipients after an eligibility review removed 11 queued sends. The flow remained under manual control.",
+    evidenceLimit: "Processed recipients are not a delivery or conversion metric. Recovered bookings and revenue have not yet been validated.",
+    contribution: "I defined the recovery experience and audience rules, worked through event and promotion constraints with engineering, and managed the cohort review and launch readiness.",
+    collaborators: "Engineering, operations, and lifecycle",
+    challengeHeading: "A declined recommendation was still an unresolved need.",
     challenge: [
-      "The previous miles-based concept was hard to understand and weakly connected to the behaviors CarAdvise wanted to encourage.",
-      "A credible replacement needed to create recognizable value, support redemption, work across customer and operational surfaces, and remain explainable to customers and frontline teams.",
-    ],
-    role: [
-      "I translated the retention goal into operating rules, customer experience, lifecycle data, measurement, launch readiness, and post-launch support.",
-      "That meant defining audiences, earn and burn behavior, reservation states, exclusions, retroactive eligibility, rounding, success measures, and the boundary of the MVP.",
+      "Customers can decline recommended maintenance without deciding they will never need it. A useful follow-up had to preserve the original service context and make reconsideration easier.",
+      "The journey depended on more than an email. The event had to describe an eligible service, shop options needed usable prices, the offer needed predictable behavior, and the customer still needed to be eligible when the message was sent.",
     ],
     decisions: [
-      { title: "Use a simple currency", copy: "100 points equals $1 in service credit, with value connected to eligible spend and selected maintenance behaviors." },
-      { title: "Reward meaningful milestones", copy: "Vehicle addition, first booking, first completed service, and mileage updates create an activation path—not random gamification." },
-      { title: "Define the awkward edges", copy: "Cancellation, discounts, partner benefits, tires, taxes, fees, and reservation all received explicit behavior." },
-      { title: "Launch with an operating model", copy: "Training and a 30-day support channel turned real customer patterns and ledger anomalies into prioritized fixes." },
+      { title: "Explain the service before asking for action.", constraint: "A discount alone did not explain why the original recommendation deserved another look.", choice: "I paired a concise service explanation with the prior visit context and up to three shop options, giving the customer a concrete decision to revisit." },
+      { title: "Change the promotion mechanism when its scope failed.", constraint: "An automatically applied promotion could attach outside the intended recovery journey, and the available admin controls could not restrict it to individual services.", choice: "We paused the launch and moved to an explicit checkout code. I tightened the audience and service checks and kept the initial send manual." },
+      { title: "Recheck the queue at the moment of launch.", constraint: "Eligibility could change while customers waited for the promotion and data issues to be resolved.", choice: "The queued audience was reviewed again, 11 ineligible sends were canceled, and the remaining 169 were processed only after approval." },
     ],
-    outcome: "The MVP proved operational scale—and exposed the next retention problem.",
-    outcomeDetail: "In its first twelve weeks, Rewards supported 71,424 customers and 100,717 ledger transactions. Customers redeemed $37,520 in value across approximately 7,450 order-linked transactions. Post-launch analysis showed 32.6% redemption among customers who earned beyond the introductory grant, compared with 0.35% among grant-only recipients—an association that shifted the next roadmap question toward repeat earning, clearer redemption value, and lifecycle-triggered engagement. Retention lift remains a measurement goal, not a claimed result.",
-    next: "lifecycle-systems",
+    outcome: "A controlled launch with an honest measurement boundary.",
+    outcomeDetail: "The October 26 send moved the program from preparation into a live pilot. The next measurement step is to connect the original declined service to a subsequent booking and paid order, then assess incentive use and recovered revenue. The launch demonstrates execution and control; commercial impact remains open.",
+    detailLabel: "Explore the recovery decision model",
+  },
+  {
+    slug: "booking-journey",
+    shortTitle: "Keep a failed booking from becoming a lost customer.",
+    title: "Rebuilding the booking journey around returning users and recoverable failure",
+    category: "Consumer experience",
+    status: "Released",
+    statusTone: "live",
+    period: "Released · Web and mobile",
+    deck: "Preserving progress through late-stage failure and recognizing the information returning customers had already provided.",
+    proofValue: "Retry",
+    proofLabel: "without restarting",
+    proofContext: "Booking recovery released",
+    result: "Payment handling and final confirmation were separated, recovery paths preserved valid progress, and returning-user behavior reached production.",
+    evidenceLimit: "Delivery is established. A conversion lift has not been validated against a defined baseline.",
+    contribution: "I defined customer and system behavior across first-time, returning-user, and failure states, translated it into requirements, and coordinated UAT and release follow-through.",
+    collaborators: "Design, engineering, and operations",
+    challengeHeading: "The final step could send customers back to the beginning.",
+    challenge: [
+      "Booking combined vehicle entry, service selection, shop choice, scheduling, payment, and confirmation. A late failure could leave customers repeating work or uncertain whether a payment-related action had succeeded.",
+      "Returning users also faced requests for information the platform already knew. The journey needed to recognize both saved information and valid progress within the current session.",
+    ],
+    decisions: [
+      { title: "Separate payment from booking confirmation.", constraint: "A failed confirmation should not make an otherwise successful payment-method action ambiguous.", choice: "I defined those as separate operations so a confirmation retry could happen without repeating completed payment setup." },
+      { title: "Recover at the affected step.", constraint: "A generic restart discarded valid vehicle, service, shop, and scheduling choices.", choice: "I specified error-specific recovery and a general fallback, preserving the customer context that remained valid." },
+      { title: "Ask returning customers only for what is missing.", constraint: "First-time and repeat visits had different information needs, with additional partner and market rules.", choice: "I defined saved-data and conditional-step behavior, then worked through US, Canada, walk-in, and responsive states in UAT." },
+    ],
+    outcome: "Recovery became part of the designed experience.",
+    outcomeDetail: "The error-recovery story, repeat-booking flow, and first-time-user modifications reached Released status. Related work covered dashboard entry, vehicle switching, service search, and responsive behavior. The shipped behavior is the result established here; its effect on booking completion still needs a validated comparison.",
+    detailLabel: "Explore the booking recovery model",
   },
   {
     slug: "lifecycle-systems",
-    shortTitle: "Lifecycle that respects customer state",
-    title: "Designing lifecycle infrastructure around verified behavior",
+    shortTitle: "Let customer state determine the next message.",
+    title: "Making lifecycle programs depend on evidence the product can support",
     category: "Lifecycle infrastructure",
     status: "Live + evolving",
-    deck: "A state model that distinguishes intent, completion, and unresolved need—creating safer foundations for recovery, rewards, history, and feedback.",
-    proofValue: "3",
-    proofLabel: "states that could no longer blur",
-    challengeHeading: "Ambiguous signals made every downstream decision less trustworthy.",
-    roleHeading: "Turn lifecycle execution into a roadmap and data-contract problem.",
-    frame: [
-      { label: "Scope", value: "Events, properties, journeys" },
-      { label: "Role", value: "State model, data contracts, orchestration" },
-      { label: "Partners", value: "Engineering, lifecycle, CX" },
-      { label: "Platform", value: "Product data + Klaviyo" },
-    ],
+    statusTone: "evolving",
+    period: "2026 · Ongoing",
+    deck: "Clarifying event meaning, documenting dependencies, and making a growing lifecycle environment easier to operate.",
+    proofValue: "325",
+    proofLabel: "saved templates reorganized",
+    proofContext: "October account-organization closeout",
+    result: "The work produced a documented data reference, clearer account organization, and explicit distinctions between intent, payment, and unresolved service needs.",
+    evidenceLimit: "Completed account work does not mean all event and attribution issues are resolved. Payment, completion, and eligibility questions remain tracked separately.",
+    contribution: "I audited lifecycle dependencies, defined customer-state requirements, investigated event and property behavior, and organized the account around current use and delivery status.",
+    collaborators: "Engineering, lifecycle, CX, and operations",
+    challengeHeading: "A familiar event name was not enough to trust a journey.",
     challenge: [
-      "Lifecycle programs were reacting to ambiguous events instead of what customers had actually done—or were ready to do next.",
-      "Walk-in intent could be mistaken for completed service. Declined work could be flattened into generic churn. A duplicated event and property environment made those distinctions harder to trust at scale.",
-    ],
-    role: [
-      "I treated lifecycle messaging as a product-infrastructure problem: document the event environment, define canonical states, and connect each downstream action to defensible evidence.",
-      "The same model shaped recovery journeys, rewards, service history, NPS, and post-service communication.",
+      "Programs depended on signals whose names could imply more than the underlying action established. A walk-in request showed intent, while later communications needed evidence of actual service or payment.",
+      "Duplicated metrics, overlapping properties, draft templates, and historical journeys made it harder to distinguish the current system from its accumulated history.",
     ],
     decisions: [
-      { title: "Intent is not completion", copy: "A walk-in request means the customer selected a shop and intended to visit. Rewards, NPS, and history wait for verified paid service." },
-      { title: "Declined is not disengaged", copy: "A customer who declined work has an unresolved need. Preserve the service, shop, quote, and alternatives so the journey can reopen with context." },
-      { title: "Canonicalize the signals", copy: "Define stable events for vehicle addition, app entry, signup, order completion, and Rewards activity; consolidate overlapping properties." },
-      { title: "Show evidence status honestly", copy: "Separate what is live, in development, and still in backlog instead of presenting an evolving platform as a finished campaign." },
+      { title: "Separate the signal from its meaning.", constraint: "A request, a payment, and completed service support different downstream actions.", choice: "I documented what each event could establish and where source-of-truth validation was still required before using it for Rewards, history, feedback, or recovery." },
+      { title: "Make dependencies visible before retiring data.", constraint: "An apparently redundant metric could still support a live flow or segment.", choice: "I mapped event usage and field evidence, separated confirmed behavior from open questions, and treated retirement as a dependency decision." },
+      { title: "Give the account an operating structure.", constraint: "Historical and development assets made current work difficult to recognize.", choice: "The October closeout recorded 325 template moves across 12 batches, alongside verification and retained exceptions. Naming and flow organization made status easier to understand." },
     ],
-    outcome: "Verified state now determines what happens next.",
-    outcomeDetail: "Declined-services data reached production, event and property consolidation moved into development, and reliable walk-in completion remains in backlog. The result is a safer foundation for personalized journeys without overstating unfinished work.",
-    next: "feedback-system",
+    outcome: "A more legible system, with its gaps documented.",
+    outcomeDetail: "The data reference and organization records give future work a concrete starting point. Recovery and onboarding investigations now explicitly distinguish historical events from current eligibility and suppression state. Account cleanup is a completed operational phase; unresolved data semantics and revenue attribution remain ongoing product work.",
+    detailLabel: "Explore the customer-state model",
   },
   {
     slug: "feedback-system",
-    shortTitle: "Feedback as an operating system",
-    title: "Turning a survey migration into a closed-loop product system",
-    category: "Voice of customer",
+    shortTitle: "Turn customer feedback into an owned workflow.",
+    title: "Connecting post-service surveys to context, routing, and follow-through",
+    category: "Customer feedback",
     status: "Live foundation",
-    deck: "A reliable feedback model connecting the service moment to survey delivery, response routing, operational QA, and follow-up.",
+    statusTone: "evolving",
+    period: "2026 · Live foundation",
+    deck: "Using a survey-platform migration to clarify timing, ownership, operational QA, and the path from a response to action.",
     proofValue: "47%",
-    proofLabel: "served 3+ days after order creation",
-    challengeHeading: "A platform migration exposed a larger measurement and ownership problem.",
-    roleHeading: "Use the migration to build a closed loop that could influence product decisions.",
-    frame: [
-      { label: "Scope", value: "Post-service NPS" },
-      { label: "Role", value: "Operating model, data, QA" },
-      { label: "Partners", value: "CX, engineering, operations" },
-      { label: "Systems", value: "Zendesk + Qualtrics" },
-    ],
+    proofLabel: "serviced 3+ days after order creation",
+    proofContext: "Analysis that informed the timing requirements",
+    result: "The Zendesk-to-Qualtrics integration went live with a documented operating model for QA, suppression, routing, and follow-up.",
+    evidenceLimit: "The live foundation uses an interim timing anchor. The true payment and completion timestamp requirements are a separate refinement.",
+    contribution: "I designed the feedback operating model and embedded-data requirements, documented ownership and QA, and translated production findings into timestamp requirements.",
+    collaborators: "CX, engineering, and operations",
+    challengeHeading: "Moving the survey did not solve when or why to send it.",
     challenge: [
-      "Replacing one survey platform with another would not solve unreliable timing, thin transaction context, unclear ownership, or inconsistent follow-up.",
-      "Early analysis showed that ticket-update time was a poor proxy for the service moment: roughly 47% of orders were serviced three or more days after creation.",
-    ],
-    role: [
-      "I designed the operating model connecting qualification, survey delivery, directory and transaction data, alerts, QA dashboards, and CX follow-up.",
-      "Production findings also became backend requirements for reliable Paid and completion timestamps so feedback could eventually anchor to the customer’s actual experience.",
+      "A platform migration could preserve the same unreliable timing, thin transaction context, and unclear follow-up ownership. The system needed to represent the customer's service experience.",
+      "Analysis found that roughly 47% of orders were serviced three or more days after creation. That made the creation date an unreliable substitute for the service moment.",
     ],
     decisions: [
-      { title: "Connect the full loop", copy: "Map qualification and delivery through response classification, alert routing, dashboard visibility, and accountable follow-up." },
-      { title: "Carry transaction context", copy: "Link feedback to customer, order, partner, environment, source ticket, and service timing—not an isolated survey response." },
-      { title: "Separate QA from reporting", copy: "Operational views monitor completeness, classifications, alerts, and suppression; executive reporting answers different questions." },
-      { title: "Make maturity explicit", copy: "Document ownership, recurring QA, change control, launch checks, and the steps between an interim timing anchor and the target system." },
+      { title: "Carry the transaction context into feedback.", constraint: "A score alone could not explain the service or support action behind it.", choice: "I defined customer, order, partner, environment, and source-ticket context so a response could support investigation and follow-up." },
+      { title: "Design the handoff after the response.", constraint: "Alerts and dashboards needed clear ownership to become useful action.", choice: "I connected classification to CX routing, team alerts, suppression, and accountable follow-up, with operational QA separated from executive reporting." },
+      { title: "Distinguish the live system from the target.", constraint: "The integration could launch before the ideal timing source was available.", choice: "I documented the interim anchor and defined true Paid and completion timestamps as an explicit accuracy improvement." },
     ],
-    outcome: "Feedback became an owned workflow, not an inbox of scores.",
-    outcomeDetail: "The Zendesk-to-Qualtrics NPS integration is live with documented QA, routing, suppression, ownership, and follow-up. A true Paid/completion timestamp remains the planned refinement, clearly separated from the current foundation.",
-    next: "booking-journey",
+    outcome: "A live feedback loop with a defined path to better timing.",
+    outcomeDetail: "The foundation connects survey delivery, transaction context, response routing, and recurring QA. The service-timing analysis shaped the backend refinement rather than becoming an unsupported claim about improved NPS.",
+    detailLabel: "Explore the feedback operating model",
   },
 ];
 
-export const findCase = (slug: string) => cases.find((item) => item.slug === slug);
-
-const featuredSlugs = ["lifecycle-systems", "rewards", "booking-journey", "feedback-system"];
-export const featuredCases = featuredSlugs.map((slug) => findCase(slug)!);
+export const findCase = (slug: string) => cases.find(item => item.slug === slug);
+export const featuredCases = cases.slice(0, 3);
+export const supportingCases = cases.slice(3);

@@ -1,60 +1,17 @@
-const bookingStages = ["Vehicle", "Service", "Shop", "Time", "Payment", "Confirm"];
-
 export default function CaseArtifact({ slug }: { slug: string }) {
-  if (slug === "booking-journey") {
-    return (
-      <figure className="case-artifact artifact-booking" aria-label="Sanitized booking journey model showing six connected stages and a recovery rule">
-        <figcaption><span>Journey model</span><strong>Context survives failure</strong></figcaption>
-        <div className="journey-stages">
-          {bookingStages.map((stage, stageIndex) => <div className={stageIndex === 5 ? "stage-alert" : ""} key={stage}><small>0{stageIndex + 1}</small><b>{stage}</b>{stageIndex < 5 && <i>→</i>}</div>)}
-        </div>
-        <div className="artifact-rule"><span>↶</span><p><b>Recovery rule</b>Return to the affected step. Preserve every valid choice.</p></div>
-      </figure>
-    );
-  }
-
-  if (slug === "rewards") {
-    return (
-      <figure className="case-artifact artifact-rewards" aria-label="Sanitized Rewards evidence showing customers supported, ledger events, redeemed value, and redemption by engagement cohort">
-        <figcaption><span>Measured behavior · First 12 weeks</span><strong>Scale revealed the next loop</strong></figcaption>
-        <div className="rewards-metrics">
-          <article><strong>71.4K</strong><span>Customers</span></article>
-          <article><strong>100.7K</strong><span>Ledger events</span></article>
-          <article><strong>7.3K</strong><span>Redeemers</span></article>
-          <article><strong>$37.5K</strong><span>Value redeemed</span></article>
-        </div>
-        <div className="cohort-panel">
-          <div className="cohort-heading"><span>Redemption by observed behavior</span><small>Association, not causal lift</small></div>
-          <div className="cohort-row"><span>Earned beyond grant</span><i><b style={{ width: "100%" }} /></i><strong>32.6%</strong></div>
-          <div className="cohort-row"><span>Grant only</span><i><b style={{ width: "1.1%" }} /></i><strong>0.35%</strong></div>
-        </div>
-        <p className="rewards-learning"><b>Roadmap signal</b> Move from broad issuance toward repeat earning, visible value, and timely redemption prompts.</p>
-      </figure>
-    );
-  }
-
-  if (slug === "lifecycle-systems") {
-    const states = [
-      ["Walk-in submitted", "Intent", "Appointment support"],
-      ["Order Paid", "Complete", "Rewards + NPS"],
-      ["Service declined", "Unresolved", "Recovery journey"],
-    ];
-    return (
-      <figure className="case-artifact artifact-lifecycle" aria-label="Sanitized lifecycle state model separating intent, completion, and unresolved need">
-        <figcaption><span>State model</span><strong>Signal ≠ customer state</strong></figcaption>
-        <div className="state-head"><span>Observed signal</span><span>Verified state</span><span>Next action</span></div>
-        <div className="state-rows">{states.map((state) => <div key={state[0]}><span>{state[0]}</span><b>{state[1]}</b><span>{state[2]}</span></div>)}</div>
-        <p className="state-note">Only verified completion unlocks service history, Rewards, and feedback.</p>
-      </figure>
-    );
-  }
-
+  if (slug === "rewards") return (
+    <figure className="case-artifact"><figcaption>Rewards · Observed activity in the first 12 weeks</figcaption><dl className="artifact-metrics"><div><dt>Customers supported</dt><dd>71,424</dd></div><div><dt>Ledger transactions</dt><dd>100,717</dd></div><div><dt>Value redeemed</dt><dd>$37,520</dd></div></dl><table className="artifact-table"><caption>Redemption by observed earning behavior</caption><thead><tr><th scope="col">Cohort</th><th scope="col">Redemption rate</th></tr></thead><tbody><tr><th scope="row">Earned beyond introductory grant</th><td>32.6%</td></tr><tr><th scope="row">Introductory grant only</th><td>0.35%</td></tr></tbody></table><p className="model-note">The cohorts differ in engagement. This comparison is an association and does not establish causal lift.</p></figure>
+  );
+  if (slug === "declined-services") return (
+    <figure className="case-artifact"><figcaption>Recovery pilot · Decision and launch model</figcaption><ol className="model-steps"><li><b>Recognize the unresolved service.</b><span>Preserve the original recommendation and visit context.</span></li><li><b>Confirm there is a useful next action.</b><span>Check the service, audience, and availability of priced shop options.</span></li><li><b>Recheck eligibility before sending.</b><span>Remove customers whose current state no longer supports the message.</span></li><li><b>Send under manual control.</b><span>169 recipients processed after 11 queued sends were canceled.</span></li></ol><p className="model-note">Next measurement: original service → subsequent booking → paid order. That attribution is still to be validated.</p></figure>
+  );
+  if (slug === "booking-journey") return (
+    <figure className="case-artifact"><figcaption>Booking · Customer progress and recovery</figcaption><ol className="booking-stages">{["Vehicle", "Service", "Shop", "Time", "Payment", "Confirm"].map((stage, i) => <li key={stage}><span>0{i + 1}</span>{stage}</li>)}</ol><div className="model-rule"><b>If confirmation fails</b><p>Return to the affected step. Preserve every valid choice. Retry confirmation without repeating completed payment setup.</p></div><p className="model-note">Simplified behavior model. Partner, market, and error-specific rules sit within the individual stages.</p></figure>
+  );
+  if (slug === "lifecycle-systems") return (
+    <figure className="case-artifact"><figcaption>Lifecycle · Distinguishing signals from customer state</figcaption><table className="artifact-table"><caption>What an observed signal can establish</caption><thead><tr><th scope="col">Signal</th><th scope="col">Meaning</th><th scope="col">Decision</th></tr></thead><tbody><tr><th scope="row">Walk-in request</th><td>Intent to visit</td><td>Support the visit; verify completion separately.</td></tr><tr><th scope="row">Paid order</th><td>Payment recorded</td><td>Validate downstream fulfillment and attribution rules.</td></tr><tr><th scope="row">Declined service</th><td>Unresolved recommendation</td><td>Check current eligibility before recovery.</td></tr></tbody></table><p className="model-note">This model documents the distinctions journeys need. It does not imply every downstream integration is complete.</p></figure>
+  );
   return (
-    <figure className="case-artifact artifact-feedback" aria-label="Sanitized closed-loop feedback operating model">
-      <figcaption><span>Closed-loop model</span><strong>Feedback becomes action</strong></figcaption>
-      <div className="feedback-flow"><div><small>01</small><b>Interim anchor</b></div><i>→</i><div><small>02</small><b>Survey sent</b></div><i>→</i><div><small>03</small><b>Classify</b></div><i>→</i><div><small>04</small><b>Route + follow up</b></div></div>
-      <div className="feedback-branches"><span>Promoter <b>Advocacy</b></span><span>Passive <b>CX follow-up</b></span><span>Detractor <b>Alert + ticket</b></span></div>
-      <p className="target-note"><b>Target refinement</b> Anchor delivery to a true Paid / completion timestamp.</p>
-    </figure>
+    <figure className="case-artifact"><figcaption>Feedback · From service context to follow-up</figcaption><ol className="model-steps"><li><b>Qualify the service event.</b><span>Use the current timing anchor and carry customer and transaction context.</span></li><li><b>Deliver with suppression rules.</b><span>Keep survey frequency and eligibility explicit.</span></li><li><b>Classify and route the response.</b><span>Make ownership, team alerts, and CX follow-up visible.</span></li><li><b>Review system health.</b><span>Check completeness, routing, and suppression separately from executive reporting.</span></li></ol><p className="model-note">Target refinement: use true payment and completion timestamps as the timing source.</p></figure>
   );
 }
