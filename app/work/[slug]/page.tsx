@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import CaseArtifact from "../../components/CaseArtifact";
+import CaseVisual from "../../components/CaseVisual";
 import { cases, findCase } from "../cases";
 
 export function generateStaticParams() { return cases.map(({ slug }) => ({ slug })); }
@@ -28,8 +29,9 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
           <div className="case-kicker"><p className="eyebrow">{item.category}</p><span className={`status status-${item.statusTone}`}>{item.status}</span></div>
           <h1>{item.shortTitle}</h1>
           <p className="case-deck">{item.title}</p>
-          <div className="case-overview">
+          <div className="case-feature">
             <div className="case-contribution"><p className="eyebrow">My contribution</p><p>{item.contribution}</p><dl><div><dt>Alongside</dt><dd>{item.collaborators}</dd></div><div><dt>Status</dt><dd>{item.period}</dd></div></dl></div>
+            <div className="case-visual"><CaseVisual slug={item.slug}/><p className="visual-caption">Portfolio reconstruction of the product rules and workflow. My contribution and delivery status are described alongside.</p></div>
             <aside className="result-summary" aria-labelledby="result-title"><p className="eyebrow" id="result-title">What happened</p><p>{item.result}</p><div className="evidence-boundary"><span className="boundary-label">Evidence note</span><p>{item.evidenceLimit}</p></div></aside>
           </div>
         </header>

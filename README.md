@@ -23,7 +23,7 @@ The custom domain is `brandonlocke.co`.
 
 ## Content and design
 
-The homepage features Rewards, Declined Services, and booking recovery. Lifecycle infrastructure and customer feedback remain available as supporting case studies. Case content lives in `app/work/cases.ts`.
+The homepage features Rewards, Declined Services, and booking recovery. Each has a distinct reconstructed product model, also visible near the start of its case study. Lifecycle infrastructure and customer feedback remain available as supporting case studies. Case content lives in `app/work/cases.ts`; the explanatory visuals live in `app/components/CaseVisual.tsx`.
 
 See [DESIGN.md](DESIGN.md) for the attention and clarity principles that guide content, hierarchy, accessibility, and evidence claims.
 

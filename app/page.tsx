@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { featuredCases, supportingCases } from "./work/cases";
+import CaseVisual from "./components/CaseVisual";
 
 export default function Home() {
   return (
@@ -13,8 +14,8 @@ export default function Home() {
         <header className="hero wrap">
           <div className="hero-main">
             <p className="eyebrow">Product management · Growth & lifecycle</p>
-            <h1>Make the complex<br/><em>feel simple.</em></h1>
-            <p className="hero-description">I build consumer experiences that help people take the next step with confidence, from their first booking to their next reason to return.</p>
+            <h1>Hi, I'm Brandon.<br/><em>I make the complex clear.</em></h1>
+            <p className="hero-description">I turn complicated customer journeys into clear product decisions, then work with design, engineering, and operations to get them into customers' hands.</p>
             <a className="primary-link" href="#work">Explore selected work <span aria-hidden="true">↓</span></a>
           </div>
           <aside className="hero-context" aria-label="Current role">
@@ -32,14 +33,14 @@ export default function Home() {
           <div className="project-list">
             {featuredCases.map((item, index) => (
               <article className={`project project-${item.slug}`} key={item.slug}>
-                <div className="project-index" aria-hidden="true">0{index + 1}</div>
                 <div className="project-copy">
-                  <div className="project-kicker"><span>{item.category}</span><span className={`status status-${item.statusTone}`}>{item.status}</span></div>
+                  <div className="project-kicker"><span className="project-index" aria-hidden="true">0{index + 1}</span><span>{item.category}</span><span className={`status status-${item.statusTone}`}>{item.status}</span></div>
                   <h3><Link className="project-link" href={`/work/${item.slug}`}>{item.shortTitle}<span className="project-arrow" aria-hidden="true">↗</span></Link></h3>
                   <p>{item.deck}</p>
+                  <div className="project-proof"><strong>{item.proofValue}</strong><div><span>{item.proofLabel}</span><small>{item.proofContext}</small></div></div>
                   <span className="read-case" aria-hidden="true">Read the case <span>→</span></span>
                 </div>
-                <div className="project-evidence"><strong>{item.proofValue}</strong><span>{item.proofLabel}</span><small>{item.proofContext}</small></div>
+                <div className="project-cover"><CaseVisual slug={item.slug} compact/><p className="cover-caption">Reconstructed product model</p></div>
               </article>
             ))}
           </div>
