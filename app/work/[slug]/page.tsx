@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import CaseArtifact from "../../components/CaseArtifact";
 import ProductDemo from "../../components/ProductDemo";
 import { cases, findCase } from "../cases";
+import { socialPreviewImage } from "../../social-preview";
 
 export function generateStaticParams() { return cases.map(({ slug }) => ({ slug })); }
 
@@ -11,7 +12,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const item = findCase(slug);
   if (!item) return { title: "Case study not found | Brandon Locke" };
-  return { title: `${item.shortTitle.replace(/\.$/, "")} | Brandon Locke`, description: item.deck, alternates: { canonical: `/work/${slug}` }, openGraph: { title: `${item.shortTitle} | Brandon Locke`, description: item.deck, url: `https://brandonlocke.co/work/${slug}` } };
+  return { title: `${item.shortTitle.replace(/\.$/, "")} | Brandon Locke`, description: item.deck, alternates: { canonical: `/work/${slug}` }, openGraph: { title: `${item.shortTitle} | Brandon Locke`, description: item.deck, url: `https://brandonlocke.co/work/${slug}`, images: [socialPreviewImage] }, twitter: { card: "summary_large_image", title: `${item.shortTitle} | Brandon Locke`, description: item.deck, images: [socialPreviewImage.url] } };
 }
 
 export default async function CasePage({ params }: { params: Promise<{ slug: string }> }) {

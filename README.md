@@ -30,3 +30,5 @@ The demonstrations use explicitly illustrative data and local state. Visitors ca
 See [DESIGN.md](DESIGN.md) for the attention and clarity principles that guide content, hierarchy, accessibility, and evidence claims.
 
 After building, run the rendered-route checks with `node --test tests/rendered-html.test.mjs`.
+
+The homepage and case studies share a social image through `app/social-preview.ts`. Regenerate it with `python scripts/generate_social_preview.py` after installing Pillow and `fonttools[woff]`. When changing its design, use a new image filename in the shared metadata so link-preview services can fetch the new asset. The unversioned image also stays current for older metadata references.
