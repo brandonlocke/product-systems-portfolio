@@ -1,17 +1,14 @@
 import Link from "next/link";
 import { featuredCases, supportingCases } from "./work/cases";
 import ProductDemo from "./components/ProductDemo";
+import PortfolioNavigation from "./components/PortfolioNavigation";
 
 export default function Home() {
   return (
     <>
-      <a className="skip-link" href="#main">Skip to content</a>
-      <nav className="site-nav wrap" aria-label="Primary navigation">
-        <Link className="wordmark" href="/" aria-label="Brandon Locke, home">Brandon Locke<span>.</span></Link>
-        <div className="nav-links"><a href="#work">Work</a><a href="#approach">Approach</a><a href="#contact">Contact <span aria-hidden="true">↗</span></a></div>
-      </nav>
-      <main id="main">
-        <header className="hero wrap">
+      <PortfolioNavigation home />
+      <main id="main" tabIndex={-1}>
+        <header className="hero wrap" id="overview">
           <div className="hero-main">
             <p className="eyebrow">Product management · Growth & lifecycle</p>
             <h1>Hi, I'm Brandon.<br/><em>I make the complex clear.</em></h1>
@@ -34,7 +31,7 @@ export default function Home() {
             {featuredCases.map((item, index) => (
               <article className={`project project-${item.slug}`} key={item.slug}>
                 <div className="project-copy">
-                  <div className="project-kicker"><span className="project-index" aria-hidden="true">0{index + 1}</span><span>{item.category}</span><span className={`status status-${item.statusTone}`}>{item.status}</span></div>
+                  <div className="project-kicker"><span className="project-index mono" aria-hidden="true">0{index + 1}</span><span>{item.category}</span><span className={`status status-${item.statusTone}`}>{item.status}</span></div>
                   <h3><Link className="project-link" href={`/work/${item.slug}`}>{item.shortTitle}<span className="project-arrow" aria-hidden="true">↗</span></Link></h3>
                   <p>{item.deck}</p>
                   <div className="project-proof"><strong>{item.proofValue}</strong><div><span>{item.proofLabel}</span><small>{item.proofContext}</small></div></div>

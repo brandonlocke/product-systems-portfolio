@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { socialPreviewImage } from "./social-preview";
-import "@fontsource-variable/manrope";
+import "@fontsource-variable/source-sans-3";
+import "@fontsource-variable/martian-mono/standard.css";
 import "./globals.css";
+import "./navigation.css";
 import "./product-demo.css";
 
 export const metadata: Metadata = {

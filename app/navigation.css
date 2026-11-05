@@ -1,0 +1,145 @@
+.site-sidebar {
+  display: none;
+}
+
+@media (min-width: 64rem) {
+  body:has(.site-sidebar) {
+    padding-inline-start: var(--sidebar-width);
+  }
+
+  .site-nav {
+    display: none;
+  }
+
+  .site-sidebar {
+    position: fixed;
+    inset-block: 0;
+    inset-inline-start: 0;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    width: var(--sidebar-width);
+    padding: 34px clamp(18px, 2vw, 28px) 22px;
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+    scrollbar-width: thin;
+    border-inline-end: 1px solid var(--line);
+    background: #f2f1eb;
+  }
+
+  .sidebar-brand .wordmark {
+    font-size: 1.625rem;
+    line-height: 1.15;
+  }
+
+  .sidebar-brand p {
+    margin-top: 9px;
+    color: var(--muted);
+    font-size: 0.9375rem;
+    line-height: 1.45;
+  }
+
+  .sidebar-navigation {
+    display: grid;
+    gap: 30px;
+    margin-block-start: 40px;
+  }
+
+  .sidebar-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-block-end: 8px;
+    color: var(--muted);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+  }
+
+  .sidebar-label::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--line);
+  }
+
+  .sidebar-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .sidebar-links a {
+    display: flex;
+    align-items: center;
+    min-height: 36px;
+    gap: 9px;
+    padding: 6px 8px;
+    border-inline-start: 2px solid transparent;
+    font-size: 1rem;
+    line-height: 1.35;
+  }
+
+  .sidebar-links a:hover,
+  .sidebar-more summary:hover {
+    background: #eaece3;
+  }
+
+  .sidebar-links a[aria-current] {
+    border-inline-start-color: var(--accent);
+    background: #e4ebe0;
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  .sidebar-index {
+    flex-shrink: 0;
+    color: var(--muted);
+    font-size: 0.8125rem;
+  }
+
+  .sidebar-more {
+    margin-top: 4px;
+  }
+
+  .sidebar-more summary {
+    min-height: 36px;
+    padding: 7px 8px;
+    color: var(--muted);
+    font-size: 0.9375rem;
+    line-height: 1.45;
+  }
+
+  .sidebar-more .sidebar-links {
+    margin-top: 3px;
+  }
+
+  .sidebar-footer {
+    margin-block-start: auto;
+    padding-block-start: 36px;
+  }
+
+  .sidebar-footer a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 40px;
+    border-block-start: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 0.9375rem;
+  }
+
+  .sidebar-footer a:hover {
+    color: var(--accent);
+  }
+
+  .case-content {
+    display: block;
+  }
+
+  .case-contents {
+    display: none;
+  }
+}

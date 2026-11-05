@@ -13,7 +13,8 @@ The portfolio helps a hiring manager understand what Brandon can own, how he mak
 ## Presentation and interaction
 
 - Use whitespace, alignment, and proximity to establish relationships. Keep line lengths comfortable and actions easy to recognize.
-- Use Manrope as one variable font family for headings and body text. Create hierarchy through scale, weight, spacing, and color. Use a restrained paper, ink, and green palette, with readable contrast and visible focus states.
+- Use Source Sans 3 for headings, prose, and controls. Use Martian Mono Narrow for navigation indices, short states, demo values, and numeric evidence. Use a restrained paper, ink, and green palette, with readable contrast and visible focus states.
+- Keep the case index and page outline in a fixed desktop sidebar. Mark the current case and section. Use a top bar and inline case outline on smaller screens.
 - Use 18px equivalent body text, 15–16px supporting copy, and at least 13px portfolio metadata at the default browser size. Demo content uses 14–16px text with 12px metadata. Keep font sizes relative to the browser default, and reflow narrow layouts instead of shrinking type. Demo panels grow with content; controls remain readable and usable at normal zoom.
 - Show one interactive product reconstruction near the start of each case. Use illustrated interface states and working local controls to explain the behavior. Reveal deeper supporting evidence on request using native, keyboard-accessible disclosure controls. Keep role, result, and delivery status visible.
 - Use explicit status labels rather than implied certainty. Do not equate a pilot send with conversion or a cohort association with causal lift.

@@ -25,7 +25,7 @@ The custom domain is `brandonlocke.co`.
 
 The homepage features Rewards, Declined Services, and booking recovery. Each has an interactive, illustrated product reconstruction, also visible near the start of its case study. Lifecycle infrastructure and customer feedback remain available as supporting case studies with their own demos. Case content lives in `app/work/cases.ts`; demo behavior lives in `app/components/ProductDemo.tsx`, SVG artwork in `app/components/DemoArt.tsx`, and demo styles in `app/product-demo.css`.
 
-The demonstrations use explicitly illustrative data and local state. Visitors can apply sample points, select a sample shop, retry confirmation, interpret an event, or route a sample feedback response. Playback is opt-in, pauses offscreen, and respects reduced-motion preferences. Manrope is self-hosted through Fontsource, with its license in `public/manrope-license.txt`.
+The demonstrations use explicitly illustrative data and local state. Visitors can apply sample points, select a sample shop, retry confirmation, interpret an event, or route a sample feedback response. Playback is opt-in, pauses offscreen, and respects reduced-motion preferences. Source Sans 3 and Martian Mono are self-hosted through Fontsource, with their licenses in `public/`.
 
 See [DESIGN.md](DESIGN.md) for the attention and clarity principles that guide content, hierarchy, accessibility, and evidence claims.
 

@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import CaseArtifact from "../../components/CaseArtifact";
 import ProductDemo from "../../components/ProductDemo";
+import PortfolioNavigation, { caseOutline } from "../../components/PortfolioNavigation";
 import { cases, findCase } from "../cases";
 import { socialPreviewImage } from "../../social-preview";
 
@@ -22,10 +23,9 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
   const nextCase = cases[(cases.indexOf(item) + 1) % cases.length];
   return (
     <>
-      <a className="skip-link" href="#main">Skip to content</a>
-      <nav className="site-nav wrap" aria-label="Primary navigation"><Link className="wordmark" href="/">Brandon Locke<span>.</span></Link><div className="nav-links"><Link href="/#work">All work</Link><Link href="/#contact">Contact <span aria-hidden="true">↗</span></Link></div></nav>
-      <main id="main" className={`case-page case-${item.slug}`}>
-        <header className="case-hero wrap">
+      <PortfolioNavigation activeCase={slug} />
+      <main id="main" className={`case-page case-${item.slug}`} tabIndex={-1}>
+        <header className="case-hero wrap" id="overview">
           <Link className="back-link" href="/#work"><span aria-hidden="true">←</span> Selected work</Link>
           <div className="case-kicker"><p className="eyebrow">{item.category}</p><span className={`status status-${item.statusTone}`}>{item.status}</span></div>
           <h1>{item.shortTitle}</h1>
@@ -37,10 +37,13 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
           </div>
         </header>
         <div className="case-content wrap">
-          <nav className="case-contents" aria-label="On this page"><span>In this case</span><a href="#problem">The problem</a><a href="#decisions">The decisions</a><a href="#evidence">The evidence</a></nav>
+          <nav className="case-contents" aria-label="On this page">
+            <span>In this case</span>
+            {caseOutline.slice(1).map(({ id, label }) => <a href={`#${id}`} key={id}>{label}</a>)}
+          </nav>
           <article className="case-body">
             <section className="case-section" id="problem"><p className="eyebrow">The problem</p><h2>{item.challengeHeading}</h2>{item.challenge.map(p => <p key={p}>{p}</p>)}</section>
-            <section className="case-section" id="decisions"><p className="eyebrow">The decisions</p><h2>Where I focused the work.</h2><ol className="decision-list">{item.decisions.map((decision, index) => <li key={decision.title}><span className="decision-number" aria-hidden="true">0{index + 1}</span><div><h3>{decision.title}</h3><p className="decision-constraint">{decision.constraint}</p><p>{decision.choice}</p></div></li>)}</ol></section>
+            <section className="case-section" id="decisions"><p className="eyebrow">The decisions</p><h2>Where I focused the work.</h2><ol className="decision-list">{item.decisions.map((decision, index) => <li key={decision.title}><span className="decision-number mono" aria-hidden="true">0{index + 1}</span><div><h3>{decision.title}</h3><p className="decision-constraint">{decision.constraint}</p><p>{decision.choice}</p></div></li>)}</ol></section>
             <section className="case-section outcome-section" id="evidence"><p className="eyebrow">The evidence</p><h2>{item.outcome}</h2><p>{item.outcomeDetail}</p><details className="artifact-details"><summary>{item.detailLabel}</summary><div className="artifact-container"><CaseArtifact slug={item.slug}/><p className="artifact-caption">Reconstructed for this portfolio. Customer details and internal records are omitted.</p></div></details></section>
           </article>
         </div>

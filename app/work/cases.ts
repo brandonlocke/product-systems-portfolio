@@ -1,5 +1,6 @@
 export type CaseStudy = {
   slug: string;
+  navTitle: string;
   shortTitle: string;
   title: string;
   category: string;
@@ -25,6 +26,7 @@ export type CaseStudy = {
 export const cases: CaseStudy[] = [
   {
     slug: "rewards",
+    navTitle: "Rewards",
     shortTitle: "Give customers a reason to return.",
     title: "Launching CarAdvise Rewards across the customer and operational experience",
     category: "Retention & loyalty",
@@ -55,6 +57,7 @@ export const cases: CaseStudy[] = [
   },
   {
     slug: "declined-services",
+    navTitle: "Declined Services",
     shortTitle: "Reopen a service decision with context.",
     title: "Building and launching a controlled declined-service recovery pilot",
     category: "Lifecycle recovery",
@@ -85,6 +88,7 @@ export const cases: CaseStudy[] = [
   },
   {
     slug: "booking-journey",
+    navTitle: "Booking recovery",
     shortTitle: "Keep a failed booking from becoming a lost customer.",
     title: "Rebuilding the booking journey around returning users and recoverable failure",
     category: "Consumer experience",
@@ -115,6 +119,7 @@ export const cases: CaseStudy[] = [
   },
   {
     slug: "lifecycle-systems",
+    navTitle: "Customer state",
     shortTitle: "Let customer state determine the next message.",
     title: "Making lifecycle programs depend on evidence the product can support",
     category: "Lifecycle infrastructure",
@@ -145,6 +150,7 @@ export const cases: CaseStudy[] = [
   },
   {
     slug: "feedback-system",
+    navTitle: "Customer feedback",
     shortTitle: "Turn customer feedback into an owned workflow.",
     title: "Connecting post-service surveys to context, routing, and follow-through",
     category: "Customer feedback",

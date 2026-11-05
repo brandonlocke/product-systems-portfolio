@@ -6,8 +6,8 @@ const environment = { ASSETS: { fetch: async () => new Response("Not found", { s
 const context = { waitUntil() {}, passThroughOnException() {} };
 const request = path => worker.fetch(new Request(`https://brandonlocke.co${path}`, { headers: { accept: "text/html" } }), environment, context);
 const assertSocialPreview = html => {
-  assert.match(html, /property="og:image" content="https:\/\/brandonlocke\.co\/social-preview-20261030\.png"/);
-  assert.match(html, /name="twitter:image" content="https:\/\/brandonlocke\.co\/social-preview-20261030\.png"/);
+  assert.match(html, /property="og:image" content="https:\/\/brandonlocke\.co\/social-preview-20261105\.png"/);
+  assert.match(html, /name="twitter:image" content="https:\/\/brandonlocke\.co\/social-preview-20261105\.png"/);
   assert.doesNotMatch(html, /problems that resist the obvious answer/);
 };
 
@@ -29,9 +29,11 @@ for (const slug of ["rewards", "declined-services", "booking-journey", "lifecycl
     assertSocialPreview(html);
     assert.match(html, /My contribution/);
     assert.match(html, /Evidence note/);
-    const initialContent = html.split("<details")[0];
+    const initialContent = html.match(/<header[^>]*id="overview"[^>]*>([\s\S]*?)<\/header>/)?.[1];
+    assert.ok(initialContent, "case overview renders before the detailed evidence");
     assert.match(initialContent, /<figure[^>]*aria-label="[^"]*Interactive product demonstration/);
     assert.match(initialContent, /Portfolio reconstruction/);
+    assert.match(html, new RegExp(`<a\\b(?=[^>]*href="/work/${slug}")(?=[^>]*aria-current="page")[^>]*>`));
     assert.ok(html.includes(`https://brandonlocke.co/work/${slug}`));
     assert.match(html, /<details class="artifact-details">/);
     assert.doesNotMatch(html, /CONFLT2025-|members\.ebay\.com|CARCARE10/);
